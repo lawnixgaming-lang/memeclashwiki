@@ -83,6 +83,44 @@
             animation: shake 0.35s ease-in-out;
         }
 
+        /* Meme Ticker Marquee Animation */
+        @keyframes memeMarquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-meme-marquee {
+            display: flex;
+            width: max-content;
+            animation: memeMarquee 28s linear infinite;
+        }
+        .animate-meme-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Bouncy Meme Wiggle on Hover */
+        @keyframes memeWiggle {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-4deg) scale(1.06); }
+            75% { transform: rotate(4deg) scale(1.06); }
+        }
+        .hover-meme-wiggle:hover {
+            animation: memeWiggle 0.35s ease-in-out;
+        }
+
+        /* Floating Damage / Meme Pop Text */
+        @keyframes popFloat {
+            0% { opacity: 1; transform: translateY(0) scale(0.85); }
+            100% { opacity: 0; transform: translateY(-48px) scale(1.25); }
+        }
+        .meme-pop-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            animation: popFloat 0.85s ease-out forwards;
+        }
+
         /* Mobile touch & overflow safeguards */
         html, body {
             max-width: 100%;
@@ -91,6 +129,27 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-[#0b0e14] dark:text-slate-100 font-sans antialiased transition-colors duration-200 bg-grid-pattern min-h-screen flex flex-col overflow-x-hidden">
+
+    <!-- Live Adventurer Meme Land Ticker -->
+    <div class="w-full bg-gradient-to-r from-clash-700 via-neon-pink to-amber-500 text-white text-[11px] sm:text-xs font-display font-bold py-1.5 overflow-hidden border-b border-white/15 select-none">
+        <div class="animate-meme-marquee flex items-center gap-8 px-4">
+            <span>🔥 BREAKING: "Tap screen = skills go BRRR, monsters go REEE!"</span>
+            <span>💀 PSA: Dying to a player in PvP Zones drops your high-power loot—don't get trolled!</span>
+            <span>🧙‍♂️ MAGE GANG: Remote • AoE • High Damage — melting Cave of Vibes waves</span>
+            <span>🛡️ WARRIOR CHADS: Melee • High Defense • High Burst — tanking World Bosses</span>
+            <span>☯️ TAOIST SIGMAS: Healing • Summon • High Survival — 98% Auto-Battle AFK kings</span>
+            <span>💎 TOP-UP ALERT: 10% Gem Rebate + $1 = 1 Point on Official Portal!</span>
+            <span>🎁 FREE LOOT: VIP777 • VIP888 • VIP999 • BZ777 • BZ888 • BZ999 • HPLB777</span>
+            <!-- Duplicate track for seamless infinite scroll -->
+            <span>🔥 BREAKING: "Tap screen = skills go BRRR, monsters go REEE!"</span>
+            <span>💀 PSA: Dying to a player in PvP Zones drops your high-power loot—don't get trolled!</span>
+            <span>🧙‍♂️ MAGE GANG: Remote • AoE • High Damage — melting Cave of Vibes waves</span>
+            <span>🛡️ WARRIOR CHADS: Melee • High Defense • High Burst — tanking World Bosses</span>
+            <span>☯️ TAOIST SIGMAS: Healing • Summon • High Survival — 98% Auto-Battle AFK kings</span>
+            <span>💎 TOP-UP ALERT: 10% Gem Rebate + $1 = 1 Point on Official Portal!</span>
+            <span>🎁 FREE LOOT: VIP777 • VIP888 • VIP999 • BZ777 • BZ888 • BZ999 • HPLB777</span>
+        </div>
+    </div>
 
     <!-- Top Navigation Bar -->
     <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/85 dark:bg-[#0f131c]/85 border-b border-slate-200 dark:border-slate-800/80">
@@ -104,7 +163,7 @@
                 </button>
                 <a href="#" onclick="selectArticle('welcome'); return false;" class="flex items-center gap-2 sm:gap-3 group min-w-0">
                     <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-clash-600 via-neon-pink to-neon-amber flex items-center justify-center text-white font-display font-extrabold text-lg sm:text-xl shadow-lg shadow-clash-500/25 group-hover:scale-105 transition-transform overflow-hidden border border-clash-500/30 shrink-0">
-                        <img src="./memeclash.jpg" alt="Meme Clash Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <img src="./meme2.jpg" alt="Meme Clash Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
                         <span class="hidden">MC</span>
                     </div>
                     <div class="truncate">
@@ -431,40 +490,87 @@
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
                         <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800">
                             <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Developer / Publisher</span>
-                            <span class="font-display font-bold text-sm text-clash-500">CloudSwift Core</span>
+                            <span class="font-display font-bold text-sm sm:text-base text-clash-500 mt-0.5 block">CloudSwift Core</span>
                         </div>
                         <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800">
                             <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Version & Release</span>
-                            <span class="font-display font-bold text-xs sm:text-sm text-neon-emerald">v1.0.4 (Sep 3, 2026)</span>
-                            <span class="text-[11px] text-slate-400 block">Updated Sep 9, 2026</span>
+                            <span class="font-display font-bold text-sm sm:text-base text-emerald-500 mt-0.5 block">v1.0.4 (Sep 3, 2026)</span>
+                            <span class="text-[11px] text-slate-400">Updated Sep 9, 2026</span>
                         </div>
                         <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800">
                             <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Store Stats</span>
-                            <span class="font-display font-bold text-xs sm:text-sm text-amber-500">93,000+ Installs • ~4.6★</span>
-                            <span class="text-[11px] text-slate-400 block">5,760+ ratings • #116 RPG</span>
+                            <span class="font-display font-bold text-sm sm:text-base text-amber-500 mt-0.5 block">93,000+ Installs • ~4.6★</span>
+                            <span class="text-[11px] text-slate-400">5,760+ ratings • #116 RPG</span>
                         </div>
                         <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800">
                             <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Package & Rating</span>
-                            <span class="font-display font-bold text-xs sm:text-sm">com.qbqb.gpen</span>
-                            <span class="text-[11px] text-slate-400 block">Everyone • ~76.7 MB (314–385 MB full)</span>
+                            <span class="font-mono font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200 mt-0.5 block">com.qbqb.gpen</span>
+                            <span class="text-[11px] text-slate-400">Everyone • ~76.7 MB (314–385 MB full)</span>
+                        </div>
+                    </div>
+
+                    <!-- Featured Promo Banner: meme1.jpg (3,000+ Hilarious Memes Squad) -->
+                    <div class="mb-6 rounded-2xl overflow-hidden border-2 border-clash-500/35 shadow-xl shadow-clash-500/10 relative group bg-slate-950">
+                        <img 
+                            src="./meme1.jpg" 
+                            alt="Meme Clash: Let's Have Fun — 3000+ Hilarious Memes Squad" 
+                            class="w-full max-h-[380px] sm:max-h-[440px] object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                            onerror="this.parentElement.style.display='none';"
+                        >
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 sm:p-5 flex flex-wrap items-end justify-between gap-3">
+                            <div>
+                                <span class="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-display font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 shadow-xs mb-1">
+                                    🔥 ADVENTURER MEME LAND
+                                </span>
+                                <h4 class="font-display font-extrabold text-base sm:text-xl text-white drop-shadow">
+                                    3,000+ Hilarious Memes & Spicy Reaction Pics
+                                </h4>
+                            </div>
+                            <button onclick="triggerBrrrSimulator(event)" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-clash-600 to-neon-pink text-white font-display font-extrabold text-xs shadow-lg hover:scale-105 active:scale-95 transition cursor-pointer">
+                                💥 UNLEASH MEME SQUAD
+                            </button>
                         </div>
                     </div>
 
                     <h3 class="font-display font-bold text-xl mb-2">Setting & Premise: Adventurer Meme Land</h3>
-                    <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
-                        <strong>Meme Clash: Let's Have Fun</strong> is a comedic idle action RPG set in <strong>Adventurer Meme Land</strong>, packed with <strong>3,000+ hilarious memes</strong> and hundreds of spicy reaction pics. Choose your class—<strong>Warrior</strong> (Melee • High Defense • High Burst), <strong>Mage</strong> (Remote • AoE • High Damage), or <strong>Taoist</strong> (Healing • Summon • High Survival)—to battle monsters, clear zones, and equip Cursed Gear.
+                    <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-5">
+                        <strong>Meme Clash: Let's Have Fun</strong> is a comedic idle action RPG set in <strong>Adventurer Meme Land</strong>, packed with <strong>3,000+ hilarious memes</strong> and hundreds of spicy reaction pics. Choose your class—<strong>Warrior</strong> (Melee / High Defense / High Burst), <strong>Mage</strong> (Remote / AoE / High Damage), or <strong>Taoist</strong> (Healing / Summon / High Survival)—and fight through meme-infested zones, World Bosses, and full-loot PvP battlegrounds.
                     </p>
 
-                    <div class="p-4 rounded-2xl bg-gradient-to-r from-clash-600/15 via-neon-pink/10 to-amber-500/10 border border-clash-500/30 mb-6 flex items-center gap-4">
-                        <div class="w-11 h-11 rounded-xl bg-clash-600 text-white flex items-center justify-center text-xl shrink-0">
-                            <i class="fa-solid fa-hand-pointer"></i>
+                    <div class="p-4 rounded-2xl bg-gradient-to-r from-clash-600/15 via-neon-pink/10 to-amber-500/10 border border-clash-500/30 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-clash-600 text-white flex items-center justify-center text-xl shrink-0 hover-meme-wiggle">
+                                <i class="fa-solid fa-hand-pointer"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-base text-slate-900 dark:text-white">One-Tap & 98% Auto-Battle Combat</h4>
+                                <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                    <strong>"Tap screen = skills go BRRR, monsters go REEE."</strong> Built-in auto-battle handles ~98% of combat right from the start, driving rapid leveling up to <strong>Level 100</strong> before progression slows down.
+                                </p>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="font-display font-bold text-base text-slate-900 dark:text-white">One-Tap & 98% Auto-Battle Combat</h4>
-                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                                <strong>"Tap screen = skills go BRRR, monsters go REEE."</strong> Built-in auto-battle handles ~98% of combat right from the start, driving rapid leveling up to <strong>Level 100</strong> before progression slows down.
+                        <button onclick="triggerBrrrSimulator(event)" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-neon-pink to-amber-500 text-white font-display font-extrabold text-xs sm:text-sm shadow-lg shadow-neon-pink/25 hover:scale-105 active:scale-95 transition cursor-pointer shrink-0">
+                            ⚡ TAP = GO BRRR!
+                        </button>
+                    </div>
+
+                    <!-- Interactive Spicy Meme & Reaction Generator Card -->
+                    <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border-2 border-dashed border-clash-500/40 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="space-y-1">
+                            <span class="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-neon-pink/15 text-neon-pink">
+                                <span>🌶️</span> Adventurer Meme Land Vibe Check
+                            </span>
+                            <p id="meme-oracle-quote" class="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white">
+                                "Entered Troll Forest at Lv. 1... got ratio'd by a bush. 10/10 GOTY."
+                            </p>
+                            <p id="meme-oracle-tag" class="text-xs text-slate-500 dark:text-slate-400">
+                                Spicy Reaction #0420 • Approved by CloudSwift Core Sigma Council
                             </p>
                         </div>
+                        <button onclick="rollSpicyMeme(event)" class="px-4 py-2.5 rounded-xl bg-clash-600 hover:bg-clash-700 text-white text-xs font-bold flex items-center justify-center gap-2 transition active:scale-95 cursor-pointer shrink-0">
+                            <i class="fa-solid fa-dice"></i>
+                            <span>Roll Spicy Meme</span>
+                        </button>
                     </div>
 
                     <h3 class="font-display font-bold text-xl mb-3">Supported Platforms & System Requirements</h3>
@@ -1033,7 +1139,7 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-clash-600 to-neon-pink text-white flex items-center justify-center text-xl sm:text-2xl shrink-0 shadow-lg shadow-clash-500/20 overflow-hidden border border-clash-500/30">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-clash-600 to-neon-pink text-white flex items-center justify-center text-xl sm:text-2xl shrink-0 shadow-lg shadow-clash-500/20 overflow-hidden border border-clash-500/30 hover-meme-wiggle">
                             ${page.id === 'welcome' ? `
                                 <img src="./memeclash.jpg" alt="Meme Clash Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
                                 <i class="${page.icon || 'fa-solid fa-gamepad'} hidden"></i>
@@ -1084,12 +1190,15 @@
                             <button onclick="selectArticle('hero-classes')" class="text-xs font-bold text-clash-500 hover:underline cursor-pointer">Full Class Guide →</button>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div onclick="selectClassTab('warrior'); selectArticle('hero-classes')" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 hover:border-rose-500/50 transition cursor-pointer flex items-start gap-3.5">
-                                <div class="w-11 h-11 rounded-xl bg-rose-500/15 text-rose-400 border border-rose-500/30 flex items-center justify-center text-lg shrink-0">
+                            <div onclick="selectClassTab('warrior'); selectArticle('hero-classes')" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 hover:border-rose-500/60 hover:-translate-y-0.5 transition cursor-pointer flex items-start gap-3.5">
+                                <div class="w-11 h-11 rounded-xl bg-rose-500/15 text-rose-400 border border-rose-500/30 flex items-center justify-center text-lg shrink-0 hover-meme-wiggle">
                                     <i class="fa-solid fa-shield-halved"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-display font-bold text-base text-slate-900 dark:text-white">Warrior</h4>
+                                    <div class="flex items-center gap-2">
+                                        <h4 class="font-display font-bold text-base text-slate-900 dark:text-white">Warrior</h4>
+                                        <span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-400">BONK CHAD</span>
+                                    </div>
                                     <div class="flex flex-wrap gap-1 mt-1 mb-1.5">
                                         <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-500/15 text-rose-400">Melee</span>
                                         <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-500/15 text-rose-400">High Defense</span>
@@ -1098,12 +1207,15 @@
                                     <p class="text-xs text-slate-600 dark:text-slate-300">Frontline melee brawler built to soak heavy hits and deliver explosive close-range burst damage.</p>
                                 </div>
                             </div>
-                            <div onclick="selectClassTab('mage'); selectArticle('hero-classes')" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 transition cursor-pointer flex items-start gap-3.5">
-                                <div class="w-11 h-11 rounded-xl bg-indigo-500/15 text-indigo-400 border border-indigo-500/30 flex items-center justify-center text-lg shrink-0">
+                            <div onclick="selectClassTab('mage'); selectArticle('hero-classes')" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 hover:border-indigo-500/60 hover:-translate-y-0.5 transition cursor-pointer flex items-start gap-3.5">
+                                <div class="w-11 h-11 rounded-xl bg-indigo-500/15 text-indigo-400 border border-indigo-500/30 flex items-center justify-center text-lg shrink-0 hover-meme-wiggle">
                                     <i class="fa-solid fa-hat-wizard"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-display font-bold text-base text-slate-900 dark:text-white">Mage</h4>
+                                    <div class="flex items-center gap-2">
+                                        <h4 class="font-display font-bold text-base text-slate-900 dark:text-white">Mage</h4>
+                                        <span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-neon-pink/15 text-neon-pink">SKILLS GO BRRR</span>
+                                    </div>
                                     <div class="flex flex-wrap gap-1 mt-1 mb-1.5">
                                         <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-500/15 text-indigo-400">Remote</span>
                                         <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-500/15 text-indigo-400">AoE</span>
@@ -1112,12 +1224,15 @@
                                     <p class="text-xs text-slate-600 dark:text-slate-300">Ranged spellcaster specializing in wide AoE magic and High Damage wave clears.</p>
                                 </div>
                             </div>
-                            <div onclick="selectClassTab('taoist'); selectArticle('hero-classes')" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 transition cursor-pointer flex items-start gap-3.5">
-                                <div class="w-11 h-11 rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-lg shrink-0">
+                            <div onclick="selectClassTab('taoist'); selectArticle('hero-classes')" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 hover:border-emerald-500/60 hover:-translate-y-0.5 transition cursor-pointer flex items-start gap-3.5">
+                                <div class="w-11 h-11 rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-lg shrink-0 hover-meme-wiggle">
                                     <i class="fa-solid fa-yin-yang"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-display font-bold text-base text-slate-900 dark:text-white">Taoist</h4>
+                                    <div class="flex items-center gap-2">
+                                        <h4 class="font-display font-bold text-base text-slate-900 dark:text-white">Taoist</h4>
+                                        <span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-cyan-500/15 text-cyan-400">AFK SIGMA</span>
+                                    </div>
                                     <div class="flex flex-wrap gap-1 mt-1 mb-1.5">
                                         <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-400">Healing</span>
                                         <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-400">Summon</span>
@@ -1942,6 +2057,42 @@
             setTimeout(() => {
                 toast.classList.add('translate-y-24', 'opacity-0');
             }, 2600);
+        }
+
+        const SPICY_MEME_QUOTES = [
+            { quote: '"Entered Troll Forest at Lv. 1... got ratio\'d by a bush. 10/10 GOTY."', tag: 'Spicy Reaction #0420 • Troll Forest Survivor' },
+            { quote: '"Walked into a PvP Zone with shiny loot. Walked out naked. Sigma lesson learned."', tag: 'Spicy Reaction #1337 • PvP Zone Reality Check' },
+            { quote: '"98% Auto-Battle farming while I eat snacks = peak Taoist High Survival gameplay."', tag: 'Spicy Reaction #0098 • AFK Grindset' },
+            { quote: '"Mage casting AoE in Cave of Vibes: screen turns into pure fireworks, monsters go REEE!"', tag: 'Spicy Reaction #9999 • Remote AoE Enjoyer' },
+            { quote: '"Warrior tanks World Boss custom theme music at 1 HP and lands High Burst crit. Pure cinema."', tag: 'Spicy Reaction #0777 • Melee Gigachad' },
+            { quote: '"Hit Lv. 100 in 5 minutes, hit Rebirth, unlocked broken skill trees. Brain cells = happy."', tag: 'Spicy Reaction #2026 • Rebirth Grind' }
+        ];
+
+        function rollSpicyMeme(e) {
+            const quoteEl = document.getElementById('meme-oracle-quote');
+            const tagEl = document.getElementById('meme-oracle-tag');
+            if (!quoteEl || !tagEl) return;
+            const pick = SPICY_MEME_QUOTES[Math.floor(Math.random() * SPICY_MEME_QUOTES.length)];
+            quoteEl.textContent = pick.quote;
+            tagEl.textContent = pick.tag;
+            if (e) spawnMemePop(e.clientX, e.clientY, '🌶️ SPICY!');
+        }
+
+        function triggerBrrrSimulator(e) {
+            const labels = ['BRRR!! 💥', 'MONSTERS GO REEE! 😱', '+999,999 CRIT! 🔥', 'SIGMA HIT! ⚡', 'AOE WIPE! 🧙‍♂️'];
+            const text = labels[Math.floor(Math.random() * labels.length)];
+            if (e) spawnMemePop(e.clientX, e.clientY, text);
+            showToast('Skills go BRRR! Monsters go REEE!');
+        }
+
+        function spawnMemePop(x, y, text) {
+            const el = document.createElement('div');
+            el.className = 'meme-pop-particle text-sm sm:text-base text-amber-400 drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]';
+            el.style.left = `${Math.max(16, Math.min(window.innerWidth - 150, x - 40))}px`;
+            el.style.top = `${Math.max(20, y - 20)}px`;
+            el.textContent = text;
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 900);
         }
 
         function escapeHtml(str) {
