@@ -486,26 +486,64 @@
                 summary: 'Official verified encyclopedia for Meme Clash: Let’s Have Fun (com.qbqb.gpen) by CloudSwift Core — Adventurer Meme Land, Warrior (Melee / High Defense / High Burst), Mage (Remote / AoE / High Damage), and Taoist (Healing / Summon / High Survival).',
                 widgetType: 'overview',
                 content: `
-                    <!-- Official Store & Release Metadata -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Developer / Publisher</span>
-                            <span class="font-display font-bold text-sm sm:text-base text-clash-500 mt-0.5 block">CloudSwift Core</span>
+                    <!-- Official Store Metadata & Android Platform Requirements Side-by-Side -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-6 items-stretch">
+                        <!-- Left: 4 Store Stat Cards -->
+                        <div class="lg:col-span-7 grid grid-cols-2 gap-3">
+                            <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 flex flex-col justify-center">
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Developer / Publisher</span>
+                                <span class="font-display font-bold text-sm sm:text-base text-clash-500 mt-0.5 block">CloudSwift Core</span>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 flex flex-col justify-center">
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Version & Release</span>
+                                <span class="font-display font-bold text-sm sm:text-base text-emerald-500 mt-0.5 block">v1.0.4 (Sep 3, 2026)</span>
+                                <span class="text-[11px] text-slate-400">Updated Sep 9, 2026</span>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 flex flex-col justify-center">
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Store Stats</span>
+                                <span class="font-display font-bold text-sm sm:text-base text-amber-500 mt-0.5 block">93,000+ Installs • ~4.6★</span>
+                                <span class="text-[11px] text-slate-400">5,760+ ratings • #116 RPG</span>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 flex flex-col justify-center">
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Package & Rating</span>
+                                <span class="font-mono font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200 mt-0.5 block">com.qbqb.gpen</span>
+                                <span class="text-[11px] text-slate-400">Everyone • ~76.7 MB (314–385 MB full)</span>
+                            </div>
                         </div>
-                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Version & Release</span>
-                            <span class="font-display font-bold text-sm sm:text-base text-emerald-500 mt-0.5 block">v1.0.4 (Sep 3, 2026)</span>
-                            <span class="text-[11px] text-slate-400">Updated Sep 9, 2026</span>
-                        </div>
-                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Store Stats</span>
-                            <span class="font-display font-bold text-sm sm:text-base text-amber-500 mt-0.5 block">93,000+ Installs • ~4.6★</span>
-                            <span class="text-[11px] text-slate-400">5,760+ ratings • #116 RPG</span>
-                        </div>
-                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Package & Rating</span>
-                            <span class="font-mono font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200 mt-0.5 block">com.qbqb.gpen</span>
-                            <span class="text-[11px] text-slate-400">Everyone • ~76.7 MB (314–385 MB full)</span>
+
+                        <!-- Right: Supported Platform & System Requirements (Android Only) -->
+                        <div class="lg:col-span-5 p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 transition flex flex-col justify-between gap-3">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-2">
+                                    <div class="flex items-center gap-2.5">
+                                        <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-500 border border-emerald-500/30 flex items-center justify-center text-lg shrink-0">
+                                            <i class="fa-brands fa-android"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-tight">Android Requirements</h4>
+                                            <span class="text-[10px] font-mono text-emerald-500">~76.7 MB (314–385 MB full)</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-500 border border-emerald-500/25 shrink-0">
+                                        Android Only
+                                    </span>
+                                </div>
+                                <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1">
+                                    <li class="flex items-start gap-1.5">
+                                        <i class="fa-solid fa-check text-emerald-500 mt-0.5 text-[10px]"></i>
+                                        <span>Official Google Play release (<code>com.qbqb.gpen</code>) • Everyone</span>
+                                    </li>
+                                    <li class="flex items-start gap-1.5">
+                                        <i class="fa-solid fa-check text-emerald-500 mt-0.5 text-[10px]"></i>
+                                        <span>Touch controls & 98% Auto-Battle UI (No PC version)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="https://play.google.com/store/apps/details?id=com.qbqb.gpen&hl=en" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-3 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-500 text-xs font-bold flex items-center justify-center gap-1.5 transition">
+                                <i class="fa-brands fa-google-play"></i>
+                                <span>Get on Google Play Store</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
                         </div>
                     </div>
 
@@ -539,23 +577,6 @@
                         <strong>Meme Clash: Let's Have Fun</strong> is a comedic idle action RPG set in <strong>Adventurer Meme Land</strong>, packed with <strong>3,000+ hilarious memes</strong> and hundreds of spicy reaction pics. Choose your class—<strong>Warrior</strong> (Melee / High Defense / High Burst), <strong>Mage</strong> (Remote / AoE / High Damage), or <strong>Taoist</strong> (Healing / Summon / High Survival)—and fight through meme-infested zones, World Bosses, and full-loot PvP battlegrounds.
                     </p>
 
-                    <div class="p-4 rounded-2xl bg-gradient-to-r from-clash-600/15 via-neon-pink/10 to-amber-500/10 border border-clash-500/30 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <div class="flex items-center gap-4">
-                            <div class="w-11 h-11 rounded-xl bg-clash-600 text-white flex items-center justify-center text-xl shrink-0 hover-meme-wiggle">
-                                <i class="fa-solid fa-hand-pointer"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-display font-bold text-base text-slate-900 dark:text-white">One-Tap & 98% Auto-Battle Combat</h4>
-                                <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                                    <strong>"Tap screen = skills go BRRR, monsters go REEE."</strong> Built-in auto-battle handles ~98% of combat right from the start, driving rapid leveling up to <strong>Level 100</strong> before progression slows down.
-                                </p>
-                            </div>
-                        </div>
-                        <button onclick="triggerBrrrSimulator(event)" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-neon-pink to-amber-500 text-white font-display font-extrabold text-xs sm:text-sm shadow-lg shadow-neon-pink/25 hover:scale-105 active:scale-95 transition cursor-pointer shrink-0">
-                            ⚡ TAP = GO BRRR!
-                        </button>
-                    </div>
-
                     <!-- Interactive Spicy Meme & Reaction Generator Card -->
                     <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border-2 border-dashed border-clash-500/40 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div class="space-y-1">
@@ -573,36 +594,6 @@
                             <i class="fa-solid fa-dice"></i>
                             <span>Roll Spicy Meme</span>
                         </button>
-                    </div>
-
-                    <h3 class="font-display font-bold text-xl mb-3">Supported Platforms & System Requirements</h3>
-                    <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 mb-6">
-                        <table class="w-full text-left border-collapse text-xs sm:text-sm">
-                            <thead>
-                                <tr class="bg-slate-100 dark:bg-slate-900/90 text-xs font-bold uppercase tracking-wider text-slate-500">
-                                    <th class="p-3.5">Platform</th>
-                                    <th class="p-3.5">Storage / Download Size</th>
-                                    <th class="p-3.5">Verified Minimum Specifications</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
-                                <tr>
-                                    <td class="p-3.5 font-bold text-emerald-500"><i class="fa-brands fa-android mr-1.5"></i> Android</td>
-                                    <td class="p-3.5 font-mono">~76.7 MB listing (314–385 MB full package)</td>
-                                    <td class="p-3.5">Official Google Play Store release (<code>com.qbqb.gpen</code>), Everyone rating.</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3.5 font-bold text-clash-500"><i class="fa-brands fa-windows mr-1.5"></i> Google Play Games on PC</td>
-                                    <td class="p-3.5 font-mono">SSD with 10 GB free space</td>
-                                    <td class="p-3.5">Windows 10 (v2004+), 4 physical CPU cores, 8 GB RAM, Intel UHD Graphics 630+, hardware virtualization enabled.</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3.5 font-bold text-cyan-500"><i class="fa-solid fa-desktop mr-1.5"></i> BlueStacks 5 (PC / Mac)</td>
-                                    <td class="p-3.5 font-mono">10 GB free HDD space</td>
-                                    <td class="p-3.5">Windows 7+ or macOS 11+, Intel/AMD/Apple Silicon processor, 4 GB RAM.</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
 
                     <!-- Quick Navigation Cards -->
@@ -1507,18 +1498,11 @@
                         <!-- Official Store & Gameplay Links -->
                         <div>
                             <h3 class="font-display font-bold text-xl mb-3">Official Store Listings & Gameplay Footage</h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm">
                                 <a href="https://play.google.com/store/apps/details?id=com.qbqb.gpen&hl=en" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 hover:border-emerald-500 transition flex items-center justify-between">
                                     <div>
                                         <span class="font-display font-bold text-emerald-500 block"><i class="fa-brands fa-google-play mr-1.5"></i> Google Play Store (Android)</span>
                                         <span class="text-xs text-slate-500">com.qbqb.gpen • CloudSwift Core</span>
-                                    </div>
-                                    <i class="fa-solid fa-arrow-up-right-from-square text-slate-400"></i>
-                                </a>
-                                <a href="https://play.google.com/pc-store/games/details?id=com.qbqb.gpen" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 hover:border-clash-500 transition flex items-center justify-between">
-                                    <div>
-                                        <span class="font-display font-bold text-clash-500 block"><i class="fa-brands fa-windows mr-1.5"></i> Google Play Games on PC</span>
-                                        <span class="text-xs text-slate-500">Official Windows PC Store Listing</span>
                                     </div>
                                     <i class="fa-solid fa-arrow-up-right-from-square text-slate-400"></i>
                                 </a>
