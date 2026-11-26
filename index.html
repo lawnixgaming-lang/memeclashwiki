@@ -82,87 +82,91 @@
         .animate-shake {
             animation: shake 0.35s ease-in-out;
         }
+
+        /* Mobile touch & overflow safeguards */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-[#0b0e14] dark:text-slate-100 font-sans antialiased transition-colors duration-200 bg-grid-pattern min-h-screen flex flex-col">
+<body class="bg-slate-50 text-slate-900 dark:bg-[#0b0e14] dark:text-slate-100 font-sans antialiased transition-colors duration-200 bg-grid-pattern min-h-screen flex flex-col overflow-x-hidden">
 
     <!-- Top Navigation Bar -->
     <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/85 dark:bg-[#0f131c]/85 border-b border-slate-200 dark:border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-0 sm:h-16 flex flex-wrap items-center justify-between gap-2 sm:gap-4">
             
             <!-- Left: Mobile Menu Toggle & Brand Logo -->
-            <div class="flex items-center gap-3">
-                <button id="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Open or Hide Navigation Sidebar" class="flex items-center gap-2 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:border-clash-500 transition cursor-pointer" title="Open or Hide Navigation Menu">
-                    <i id="sidebar-toggle-icon" class="fa-solid fa-sidebar text-clash-500 fa-bars"></i>
-                    <span id="sidebar-toggle-label">Hide</span>
+            <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+                <button id="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Open or Hide Navigation Sidebar" class="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:border-clash-500 transition cursor-pointer shrink-0" title="Open or Hide Navigation Menu">
+                    <i id="sidebar-toggle-icon" class="fa-solid fa-bars text-clash-500"></i>
+                    <span id="sidebar-toggle-label">Open</span>
                 </button>
-                <a href="#" onclick="selectArticle('welcome'); return false;" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-clash-600 via-neon-pink to-neon-amber flex items-center justify-center text-white font-display font-extrabold text-xl shadow-lg shadow-clash-500/25 group-hover:scale-105 transition-transform overflow-hidden border border-clash-500/30">
+                <a href="#" onclick="selectArticle('welcome'); return false;" class="flex items-center gap-2 sm:gap-3 group min-w-0">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-clash-600 via-neon-pink to-neon-amber flex items-center justify-center text-white font-display font-extrabold text-lg sm:text-xl shadow-lg shadow-clash-500/25 group-hover:scale-105 transition-transform overflow-hidden border border-clash-500/30 shrink-0">
                         <img src="./memeclash.jpg" alt="Meme Clash Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
                         <span class="hidden">MC</span>
                     </div>
-                    <div>
-                        <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-clash-600 to-neon-pink dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+                    <div class="truncate">
+                        <span class="font-display font-extrabold text-base sm:text-xl tracking-tight bg-gradient-to-r from-clash-600 to-neon-pink dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
                             MEME CLASH
                         </span>
-                        <span class="hidden sm:inline-block ml-1.5 text-xs font-semibold px-2 py-0.5 rounded-full bg-clash-100 text-clash-700 dark:bg-clash-500/20 dark:text-clash-300 border border-clash-200 dark:border-clash-500/30">
+                        <span class="hidden md:inline-block ml-1.5 text-xs font-semibold px-2 py-0.5 rounded-full bg-clash-100 text-clash-700 dark:bg-clash-500/20 dark:text-clash-300 border border-clash-200 dark:border-clash-500/30">
                             LET'S HAVE FUN • v1.0.4
                         </span>
                     </div>
                 </a>
             </div>
 
-            <!-- Center: Instant Wiki Search Bar -->
-            <div class="flex-1 max-w-md relative">
-                <div class="relative flex items-center">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 text-slate-400 text-sm"></i>
-                    <input 
-                        type="text" 
-                        id="wiki-search" 
-                        placeholder="Search Warrior, Mage, Taoist, codes, zones, rebirth..." 
-                        class="w-full pl-10 pr-12 py-2 text-sm rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700/80 focus:outline-none focus:ring-2 focus:ring-clash-500 focus:border-transparent placeholder-slate-400 transition"
-                    >
-                    <kbd class="hidden sm:inline-block absolute right-3 text-[11px] font-mono px-1.5 py-0.5 rounded bg-white dark:bg-slate-800 text-slate-400 border border-slate-200 dark:border-slate-700">/</kbd>
-                </div>
-            </div>
-
-            <!-- Right: Staff Mode Toggle & Theme Switcher -->
-            <div class="flex items-center gap-2 sm:gap-3">
+            <!-- Right: Staff Mode Toggle & Theme Switcher (Stays on Row 1 on Mobile) -->
+            <div class="flex items-center gap-1.5 sm:gap-3 order-2 sm:order-3 shrink-0">
                 <!-- Staff / Admin Mode Toggle -->
-                <button id="staff-toggle-btn" onclick="toggleStaffMode()" class="flex items-center gap-2 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition cursor-pointer bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200 dark:bg-slate-800/80 dark:text-slate-300 dark:border-slate-700 dark:hover:bg-slate-800" title="Unlock or Lock Staff Wiki Editor">
+                <button id="staff-toggle-btn" onclick="toggleStaffMode()" class="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition cursor-pointer bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200 dark:bg-slate-800/80 dark:text-slate-300 dark:border-slate-700 dark:hover:bg-slate-800" title="Unlock or Lock Staff Wiki Editor">
                     <i id="staff-icon" class="fa-solid fa-lock text-slate-400"></i>
                     <span class="hidden md:inline">Staff Mode:</span>
                     <span id="staff-status-text" class="font-bold">LOCKED</span>
                 </button>
 
                 <!-- Quick Add Entry Button (Visible only when Staff Mode is Unlocked) -->
-                <button id="quick-add-btn" onclick="openEditorModal()" class="hidden items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-clash-600 to-neon-pink text-white shadow-md shadow-clash-600/20 hover:opacity-95 transition cursor-pointer">
+                <button id="quick-add-btn" onclick="openEditorModal()" class="hidden items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-clash-600 to-neon-pink text-white shadow-md shadow-clash-600/20 hover:opacity-95 transition cursor-pointer">
                     <i class="fa-solid fa-plus"></i>
                     <span class="hidden sm:inline">New Entry</span>
                 </button>
 
                 <!-- Dark / Light Theme Toggle -->
-                <button id="theme-toggle" aria-label="Toggle Dark or Light Mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-amber-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition cursor-pointer">
-                    <i id="theme-icon" class="fa-solid fa-sun text-base"></i>
+                <button id="theme-toggle" aria-label="Toggle Dark or Light Mode" class="p-2 sm:p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-amber-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition cursor-pointer">
+                    <i id="theme-icon" class="fa-solid fa-sun text-sm sm:text-base"></i>
                 </button>
+            </div>
+
+            <!-- Center: Instant Wiki Search Bar (Full width Row 2 on Mobile, Centered on Desktop) -->
+            <div class="w-full sm:flex-1 sm:max-w-md relative order-3 sm:order-2">
+                <div class="relative flex items-center">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 text-slate-400 text-sm"></i>
+                    <input 
+                        type="text" 
+                        id="wiki-search" 
+                        placeholder="Search Warrior, Mage, Taoist, codes, zones..." 
+                        class="w-full pl-10 pr-10 sm:pr-12 py-2 text-sm rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700/80 focus:outline-none focus:ring-2 focus:ring-clash-500 focus:border-transparent placeholder-slate-400 transition"
+                    >
+                    <kbd class="hidden sm:inline-block absolute right-3 text-[11px] font-mono px-1.5 py-0.5 rounded bg-white dark:bg-slate-800 text-slate-400 border border-slate-200 dark:border-slate-700">/</kbd>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Main Container -->
-    <div class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex gap-8 relative">
+    <div class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 flex gap-6 lg:gap-8 relative">
 
         <!-- Mobile Sidebar Backdrop -->
         <div id="sidebar-backdrop" onclick="closeMobileSidebar()" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-40 hidden lg:hidden"></div>
 
         <!-- Left Sidebar Navigation -->
-        <aside id="wiki-sidebar" class="fixed lg:sticky top-0 lg:top-22 left-0 z-50 lg:z-10 h-full lg:h-[calc(100vh-7rem)] w-72 shrink-0 bg-white dark:bg-[#0f131c] lg:bg-transparent lg:dark:bg-transparent border-r lg:border-r-0 border-slate-200 dark:border-slate-800 p-5 lg:p-0 overflow-y-auto transform -translate-x-full lg:translate-x-0 transition-all duration-200 ease-out flex flex-col justify-between">
-            
-            <div class="space-y-6">
-                <!-- Sidebar Drawer Header (Mobile & Desktop Hide Control) -->
-                <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
-                    <span class="font-display font-bold text-sm uppercase tracking-wider text-slate-500 dark:text-slate-400">Wiki Menu</span>
-                    <button onclick="toggleSidebar()" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-clash-500 transition cursor-pointer" title="Hide Navigation Menu">
+        <aside id="wiki-sidebar" class="fixed lg:sticky top-0 lg:top-22 left-0 z-50 lg:z-10 h-[100dvh] lg:h-[calc(100vh-7rem)] w-72 max-w-[82vw] shrink-0 bg-white dark:bg-[#0f131c] lg:bg-transparent lg:dark:bg-transparent border-r lg:border-r-0 border-slate-200 dark:border-slate-800 p-4 sm:p-5 lg:p-0 overflow-y-auto transform -translate-x-full lg:hidden transition-all duration-200 ease-out flex flex-col justify-between shadow-2xl lg:shadow-none">
+            <div>
+                <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-200 dark:border-slate-800">
+                    <span class="font-display font-bold text-sm uppercase tracking-wider text-slate-500 dark:text-slate-400">Navigation Menu</span>
+                    <button onclick="toggleSidebar()" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:border-clash-500 border border-slate-200 dark:border-slate-700 transition cursor-pointer">
                         <i class="fa-solid fa-eye-slash text-[11px]"></i>
                         <span>Hide</span>
                     </button>
@@ -195,16 +199,16 @@
         </aside>
 
         <!-- Main Wiki Content Area -->
-        <main class="flex-1 min-w-0 pb-16">
+        <main class="flex-1 min-w-0 w-full pb-20">
             
             <!-- Search Results Banner (Hidden unless searching) -->
             <div id="search-results-view" class="hidden space-y-4">
-                <div class="flex items-center justify-between bg-white dark:bg-[#131824] p-4 rounded-2xl border border-slate-200 dark:border-slate-800">
+                <div class="flex flex-wrap items-center justify-between gap-3 bg-white dark:bg-[#131824] p-4 rounded-2xl border border-slate-200 dark:border-slate-800">
                     <div>
                         <h2 class="font-display font-bold text-lg">Search Results</h2>
                         <p id="search-summary" class="text-sm text-slate-500 dark:text-slate-400">Showing matches...</p>
                     </div>
-                    <button onclick="clearSearch()" class="px-3 py-1.5 text-xs font-semibold rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition cursor-pointer">
+                    <button onclick="clearSearch()" class="px-3.5 py-2 text-xs font-semibold rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition cursor-pointer">
                         Clear Search
                     </button>
                 </div>
@@ -212,9 +216,25 @@
             </div>
 
             <!-- Active Wiki Article View -->
-            <article id="article-container" class="space-y-6">
+            <article id="article-container" class="space-y-4 sm:space-y-6">
                 <!-- Populated dynamically via JS -->
             </article>
+
+            <!-- Mobile Quick Page Switcher Bar (Bottom Prev/Next & Menu for easy thumb navigation) -->
+            <div class="mt-6 lg:hidden flex items-center justify-between gap-2 p-3 rounded-2xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800 shadow-xs">
+                <button onclick="navigateAdjacentPage(-1)" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center justify-center gap-1.5 active:scale-95 transition cursor-pointer">
+                    <i class="fa-solid fa-chevron-left text-clash-500"></i>
+                    <span>Prev Page</span>
+                </button>
+                <button onclick="toggleSidebar()" class="py-2.5 px-4 rounded-xl bg-clash-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 active:scale-95 transition cursor-pointer">
+                    <i class="fa-solid fa-list-ul"></i>
+                    <span>Topics</span>
+                </button>
+                <button onclick="navigateAdjacentPage(1)" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center justify-center gap-1.5 active:scale-95 transition cursor-pointer">
+                    <span>Next Page</span>
+                    <i class="fa-solid fa-chevron-right text-clash-500"></i>
+                </button>
+            </div>
 
         </main>
     </div>
@@ -699,7 +719,7 @@
         let redeemedCodes = {};
         let userScreenshots = [];
         let selectedClassKey = 'warrior';
-        let isSidebarOpen = window.innerWidth >= 1024;
+        let isSidebarOpen = false;
 
         const STAFF_MODE_PASSWORD = 'lawnix';
         const STAFF_SESSION_KEY = 'mc_wiki_staff_unlocked_v1';
@@ -979,11 +999,11 @@
 
             container.innerHTML = `
                 <!-- Article Hero Header Card -->
-                <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800/90 shadow-xs relative overflow-hidden">
+                <div class="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800/90 shadow-xs relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-clash-500/10 via-neon-pink/5 to-transparent rounded-bl-full pointer-events-none"></div>
                     
-                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
-                        <div class="flex items-center gap-2 text-xs font-semibold text-clash-600 dark:text-clash-400">
+                    <div class="flex flex-wrap items-center justify-between gap-2 sm:gap-3 mb-3 sm:mb-4">
+                        <div class="flex flex-wrap items-center gap-2 text-xs font-semibold text-clash-600 dark:text-clash-400">
                             <span class="px-2.5 py-1 rounded-lg bg-clash-500/10 border border-clash-500/20">
                                 ${escapeHtml(page.category)}
                             </span>
@@ -1006,7 +1026,7 @@
                         `}
                     </div>
 
-                    <div class="flex items-start gap-4">
+                    <div class="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
                         <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-clash-600 to-neon-pink text-white flex items-center justify-center text-xl sm:text-2xl shrink-0 shadow-lg shadow-clash-500/20 overflow-hidden border border-clash-500/30">
                             ${page.id === 'welcome' ? `
                                 <img src="./memeclash.jpg" alt="Meme Clash Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
@@ -1015,11 +1035,11 @@
                                 <i class="${page.icon || 'fa-solid fa-book'}"></i>
                             `}
                         </div>
-                        <div>
-                            <h1 class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight text-slate-900 dark:text-white mb-2">
+                        <div class="min-w-0">
+                            <h1 class="font-display font-extrabold text-xl sm:text-3xl tracking-tight text-slate-900 dark:text-white mb-1.5 sm:mb-2 break-words">
                                 ${escapeHtml(page.title)}
                             </h1>
-                            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                            <p class="text-xs sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                                 ${escapeHtml(page.summary)}
                             </p>
                         </div>
@@ -1027,7 +1047,7 @@
                 </div>
 
                 <!-- Main Article Body Content -->
-                <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800/90 shadow-xs space-y-6">
+                <div class="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800/90 shadow-xs space-y-5 sm:space-y-6">
                     ${page.customImageUrl ? `
                         <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-950">
                             <img src="${escapeHtml(page.customImageUrl)}" alt="${escapeHtml(page.title)}" class="w-full max-h-80 object-cover" onerror="this.style.display='none'">
@@ -1600,6 +1620,14 @@
             window.addEventListener('resize', () => {
                 applySidebarState();
             });
+        }
+
+        function navigateAdjacentPage(delta) {
+            if (!wikiPages.length) return;
+            const currentIdx = wikiPages.findIndex(p => p.id === activeArticleId);
+            const nextIdx = (currentIdx + delta + wikiPages.length) % wikiPages.length;
+            selectArticle(wikiPages[nextIdx].id);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function toggleSidebar() {
