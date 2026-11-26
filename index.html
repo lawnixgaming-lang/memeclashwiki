@@ -678,34 +678,80 @@
             },
             {
                 id: 'rebirth-system',
-                title: 'Rebirth & Progression Guide (Lv. 1–100+)',
+                title: 'Rebirth System & Official In-Game Rules',
                 category: 'Core Mechanics',
                 icon: 'fa-solid fa-fire-flame-curved',
-                badge: 'PROGRESSION',
+                badge: 'TIPS 1–8',
                 updatedAt: 'Nov 2026',
-                summary: 'Verified leveling curve (fast auto-battle up to Level 100, slower endgame grind) and the max-level Rebirth system for unlocking broken new skill trees.',
+                summary: 'Official in-game Rebirth rules covering Cultivation Essence consumption, map & boss reward scaling, Level Ranking priority, Rebirth Level 13+ level resets, Rebirth Level 18+ essence exemption, and Total Level calculation.',
                 widgetType: 'rebirth-calc',
                 content: `
-                    <h3 class="font-display font-bold text-xl mb-3">Lv. 1–100+ Progression Curve & Rebirth System</h3>
-                    <div class="space-y-4 mb-6">
-                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border-l-4 border-emerald-500">
-                            <h4 class="font-display font-bold text-base text-emerald-500 mb-1">Stage 1: Levels 1 – 100 (Fast Auto-Battle Rush)</h4>
+                    <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-500/15 via-clash-500/10 to-neon-pink/10 border border-amber-500/30 mb-6 flex items-start gap-3.5">
+                        <div class="w-11 h-11 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center text-lg shrink-0 shadow-md">
+                            <i class="fa-solid fa-scroll"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-base sm:text-lg text-slate-900 dark:text-white mb-1">Official In-Game Rebirth Tips (Rules 1 – 8)</h3>
                             <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                                Built-in auto-battle handles ~98% of combat from the start, combined with one-tap burst skills (<em>"Tap screen = skills go BRRR, monsters go REEE"</em>) across your <strong>Warrior</strong>, <strong>Mage</strong>, or <strong>Taoist</strong> build. Progression through <strong>Troll Forest</strong>, <strong>Cave of Vibes</strong>, and Safe Zones moves rapidly up to <strong>Level 100</strong>.
+                                Verified directly from the <strong>Rebirth → Tips</strong> menu in <strong>Meme Clash: Let's Have Fun</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-500 border border-amber-500/30 font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">1</span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                Upon reaching the required <strong>Rebirth Level</strong>, you can consume <strong>Cultivation Essence</strong> to undergo rebirth, which will increase your <strong>Rebirth Level by 1</strong>.
                             </p>
                         </div>
 
-                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border-l-4 border-clash-500">
-                            <h4 class="font-display font-bold text-base text-clash-500 mb-1">Stage 2: Level 100+ & Max-Level Rebirth</h4>
+                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-500 border border-amber-500/30 font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">2</span>
                             <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                                After Level 100, leveling slows down into the endgame loop. Once your hero hits <strong>max level</strong>, you can <strong>Rebirth</strong> to unlock <strong>broken new skill trees</strong> and push your power even further.
+                                The higher your <strong>Rebirth Level</strong>, the more <strong>advanced maps</strong> you can access, and the <strong>better rewards</strong> you can get from high-tier bosses.
                             </p>
                         </div>
 
-                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border-l-4 border-rose-500">
-                            <h4 class="font-display font-bold text-base text-rose-500 mb-1">Stage 3: World Bosses & High-Power PvP Farming</h4>
+                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-500 border border-amber-500/30 font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">3</span>
                             <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                                Farm massive chonky <strong>World Bosses</strong> for heavy loot and enter <strong>PvP Zones</strong> for higher-power equipment—always keeping in mind that getting killed by another player in a PvP Zone causes you to lose your higher-power items.
+                                For the <strong>Level Ranking</strong>, <strong>Rebirth Level</strong> is prioritized over Character Level—players with a higher Rebirth Level rank higher.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 border-l-4 border-l-rose-500 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-lg bg-rose-500/15 text-rose-400 border border-rose-500/30 font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">4</span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                After reaching <strong>Rebirth Level 13</strong>, your <strong>Character Level will be reset</strong> to a specified level each time you undergo subsequent rebirths.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 border-l-4 border-l-emerald-500 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-lg bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">5</span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                After reaching <strong>Rebirth Level 18</strong>, you will <strong>no longer need to consume Cultivation Essence</strong> for rebirth.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-lg bg-clash-500/15 text-clash-400 border border-clash-500/30 font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">6</span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                A character's <strong>total level</strong> is the sum of <strong>Base Level</strong> and <strong>Character Level Attributes</strong> (capped at the current maximum level).
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-lg bg-clash-500/15 text-clash-400 border border-clash-500/30 font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">7</span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                The higher your <strong>Base Level</strong>, the more <strong>experience required</strong> for level-up.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-lg bg-cyan-500/15 text-cyan-400 border border-cyan-500/30 font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">8</span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                <strong>Character Level Attributes</strong> can be enhanced via <strong>Divine Seal Secondary Gear</strong>, <strong>Wing Gear</strong>, <strong>Four Symbols Secondary Gear</strong>, etc.
                             </p>
                         </div>
                     </div>
@@ -896,11 +942,11 @@
             },
             {
                 q: 'Why does leveling feel super fast at first and then slow down?',
-                a: 'Built-in auto-battle handles ~98% of combat and drives rapid progression up to Level 100. Once you pass Level 100, leveling naturally slows down as you transition into World Bosses, PvP Zone gear farming, and max-level Rebirths.'
+                a: 'Built-in auto-battle handles ~98% of combat and drives rapid progression up to Level 100. Once you pass Level 100, leveling naturally slows down as you transition into World Bosses, PvP Zone gear farming, and Rebirths.'
             },
             {
-                q: 'How do I unlock broken new skill trees?',
-                a: 'Reach max level on your Warrior, Mage, or Taoist and trigger a Rebirth. Rebirthing unlocks broken new skill trees and lets you chase endgame items like the Legendary Rebirth Ring.'
+                q: 'How does the Rebirth system work in Meme Clash?',
+                a: 'Consume Cultivation Essence upon reaching the required Rebirth Level to increase Rebirth Level by 1 (unlocking advanced maps, better high-tier boss rewards, and higher Level Ranking priority). From Rebirth Level 13+, your Character Level resets to a specified level on each rebirth, and from Rebirth Level 18+, rebirth no longer consumes Cultivation Essence.'
             },
             {
                 q: 'Where do I enter gift codes like VIP777 or BZ888?',
@@ -961,7 +1007,7 @@
 
         function loadWikiData() {
             try {
-                const stored = localStorage.getItem('mc_wiki_pages_verified_v7');
+                const stored = localStorage.getItem('mc_wiki_pages_verified_v8');
                 if (stored) {
                     wikiPages = JSON.parse(stored);
                 } else {
@@ -983,12 +1029,7 @@
         }
 
         function saveWikiToStorage() {
-            localStorage.setItem('mc_wiki_pages_verified_v7', JSON.stringify(wikiPages));
-            updatePageCountBadge();
-        }
-
-        function saveWikiToStorage() {
-            localStorage.setItem('mc_wiki_pages_verified_v6', JSON.stringify(wikiPages));
+            localStorage.setItem('mc_wiki_pages_verified_v8', JSON.stringify(wikiPages));
             updatePageCountBadge();
         }
 
@@ -1118,6 +1159,8 @@
                                 <i class="fa-solid fa-lock mr-1 text-[11px]"></i> Staff Edit
                             </button>
                         `}
+                    </div>
+
                     <div class="flex flex-col sm:flex-row items-start ${page.id === 'welcome' ? 'sm:items-center gap-4 sm:gap-6' : 'gap-3 sm:gap-4'}">
                         ${page.id === 'welcome' ? `
                             <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-clash-600 to-neon-pink text-white flex items-center justify-center text-3xl shrink-0 shadow-xl shadow-clash-500/25 overflow-hidden border-2 border-clash-500/40 hover-meme-wiggle">
@@ -1445,23 +1488,23 @@
             if (type === 'rebirth-calc') {
                 return `
                     <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <h3 class="font-display font-bold text-lg"><i class="fa-solid fa-layer-group mr-1.5 text-clash-500"></i> Leveling Pace & Rebirth Readiness Checker</h3>
-                            <span id="prog-level-label" class="text-xs font-bold px-2.5 py-1 rounded-full bg-clash-500/15 text-clash-500">Hero Level 50</span>
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="font-display font-bold text-base sm:text-lg"><i class="fa-solid fa-fire-flame-curved mr-1.5 text-amber-500"></i> Rebirth Milestone & Rule Checker</h3>
+                            <span id="prog-level-label" class="text-xs font-bold px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-500">Rebirth Level 14</span>
                         </div>
-                        <input type="range" id="prog-level-slider" min="1" max="120" value="50" class="w-full accent-clash-600 cursor-pointer">
+                        <input type="range" id="prog-level-slider" min="1" max="25" value="14" class="w-full accent-amber-500 cursor-pointer">
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
                             <div class="p-3.5 rounded-xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800">
-                                <span class="text-xs text-slate-400 block">Leveling Pace</span>
-                                <span id="prog-pace-out" class="font-display font-extrabold text-sm sm:text-base text-neon-emerald">Fast (98% Auto-Battle)</span>
+                                <span class="text-xs text-slate-400 block">Cultivation Essence Cost (Tips 1 & 5)</span>
+                                <span id="prog-pace-out" class="font-display font-extrabold text-sm sm:text-base text-amber-500">Consumes Cultivation Essence</span>
                             </div>
                             <div class="p-3.5 rounded-xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800">
-                                <span class="text-xs text-slate-400 block">Recommended Focus</span>
-                                <span id="prog-focus-out" class="font-display font-extrabold text-sm sm:text-base text-amber-500">Troll Forest & Cave of Vibes</span>
+                                <span class="text-xs text-slate-400 block">Character Level Behavior (Tip 4)</span>
+                                <span id="prog-focus-out" class="font-display font-extrabold text-sm sm:text-base text-rose-400">Resets to Specified Level (Rb 13+)</span>
                             </div>
                             <div class="p-3.5 rounded-xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800">
-                                <span class="text-xs text-slate-400 block">Rebirth Status</span>
-                                <span id="prog-rebirth-out" class="font-display font-extrabold text-sm sm:text-base text-clash-500">Reach Max Level First</span>
+                                <span class="text-xs text-slate-400 block">Maps, Bosses & Ranking (Tips 2 & 3)</span>
+                                <span id="prog-rebirth-out" class="font-display font-extrabold text-sm sm:text-base text-clash-500">Higher Maps, Loot & Rank Priority</span>
                             </div>
                         </div>
                     </div>
@@ -1563,23 +1606,29 @@
                 const slider = document.getElementById('prog-level-slider');
                 if (!slider) return;
                 const update = () => {
-                    const lv = parseInt(slider.value, 10);
-                    document.getElementById('prog-level-label').textContent = `Hero Level ${lv}`;
-                    const paceEl = document.getElementById('prog-pace-out');
-                    const focusEl = document.getElementById('prog-focus-out');
-                    const rebirthEl = document.getElementById('prog-rebirth-out');
+                    const rb = parseInt(slider.value, 10);
+                    document.getElementById('prog-level-label').textContent = `Rebirth Level ${rb}`;
+                    const essenceEl = document.getElementById('prog-pace-out');
+                    const resetEl = document.getElementById('prog-focus-out');
+                    const perkEl = document.getElementById('prog-rebirth-out');
 
-                    if (lv < 100) {
-                        paceEl.textContent = 'Fast (98% Auto-Battle)';
-                        paceEl.className = 'font-display font-extrabold text-sm sm:text-base text-neon-emerald';
-                        focusEl.textContent = lv < 45 ? 'Troll Forest & Safe Zones' : 'Cave of Vibes & Quests';
-                        rebirthEl.textContent = 'Level Up to Max Cap';
+                    if (rb >= 18) {
+                        essenceEl.textContent = 'No Cultivation Essence Needed (Tip 5)';
+                        essenceEl.className = 'font-display font-extrabold text-sm sm:text-base text-neon-emerald';
                     } else {
-                        paceEl.textContent = 'Slower Endgame Grind';
-                        paceEl.className = 'font-display font-extrabold text-sm sm:text-base text-amber-500';
-                        focusEl.textContent = 'World Bosses & PvP Zones';
-                        rebirthEl.textContent = 'Ready at Max Level (Skill Trees)';
+                        essenceEl.textContent = 'Consumes Cultivation Essence (Tip 1)';
+                        essenceEl.className = 'font-display font-extrabold text-sm sm:text-base text-amber-500';
                     }
+
+                    if (rb >= 13) {
+                        resetEl.textContent = 'Character Lv. Resets on Rebirth (Tip 4)';
+                        resetEl.className = 'font-display font-extrabold text-sm sm:text-base text-rose-400';
+                    } else {
+                        resetEl.textContent = 'No Rb 13+ Level Reset Yet';
+                        resetEl.className = 'font-display font-extrabold text-sm sm:text-base text-cyan-400';
+                    }
+
+                    perkEl.textContent = `Tier ${rb} Maps, Boss Loot & Rank Priority`;
                 };
                 slider.addEventListener('input', update);
                 update();
@@ -1997,7 +2046,7 @@
                 return;
             }
             openConfirmModal('Reset Wiki to Defaults?', 'All custom edits and saved screenshots will be restored to the official verified encyclopedia.', () => {
-                localStorage.removeItem('mc_wiki_pages_verified_v7');
+                localStorage.removeItem('mc_wiki_pages_verified_v8');
                 localStorage.removeItem('mc_wiki_redeemed_codes_v1');
                 localStorage.removeItem('mc_wiki_screenshots_v1');
                 loadWikiData();
@@ -2040,7 +2089,7 @@
             { quote: '"98% Auto-Battle farming while I eat snacks = peak Taoist High Survival gameplay."', tag: 'Spicy Reaction #0098 • AFK Grindset' },
             { quote: '"Mage casting AoE in Cave of Vibes: screen turns into pure fireworks, monsters go REEE!"', tag: 'Spicy Reaction #9999 • Remote AoE Enjoyer' },
             { quote: '"Warrior tanks World Boss custom theme music at 1 HP and lands High Burst crit. Pure cinema."', tag: 'Spicy Reaction #0777 • Melee Gigachad' },
-            { quote: '"Hit Lv. 100 in 5 minutes, hit Rebirth, unlocked broken skill trees. Brain cells = happy."', tag: 'Spicy Reaction #2026 • Rebirth Grind' }
+            { quote: '"Hit Rebirth Level 18 and stopped paying Cultivation Essence. Brain cells = happy."', tag: 'Spicy Reaction #2026 • Rebirth Grind' }
         ];
 
         function rollSpicyMeme(e) {
