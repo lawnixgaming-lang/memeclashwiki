@@ -278,9 +278,9 @@
                         <select id="entry-category" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:ring-2 focus:ring-clash-500 focus:outline-none">
                             <option value="Getting Started">Getting Started</option>
                             <option value="World & Bosses">World & Bosses</option>
-                            <option value="Gear & Economy">Gear & Economy</option>
                             <option value="Core Mechanics">Core Mechanics</option>
                             <option value="Codes & Rewards">Codes & Rewards</option>
+                            <option value="Top-Up & Rebates">Top-Up & Rebates</option>
                             <option value="Guilds & Community">Guilds & Community</option>
                             <option value="Support & FAQ">Support & FAQ</option>
                         </select>
@@ -504,10 +504,10 @@
                             <span class="font-display font-bold text-sm block text-slate-900 dark:text-white">7 Verified Gift Codes →</span>
                             <span class="text-xs text-slate-500">VIP777–999, BZ777–999, HPLB777</span>
                         </button>
-                        <button onclick="selectArticle('cursed-gear')" class="p-4 rounded-2xl bg-neon-pink/10 hover:bg-neon-pink/20 border border-neon-pink/30 text-left transition cursor-pointer">
-                            <span class="text-xs font-extrabold text-neon-pink uppercase block mb-1">Equipment & Vendor</span>
-                            <span class="font-display font-bold text-sm block text-slate-900 dark:text-white">Cursed Gear & Merchant →</span>
-                            <span class="text-xs text-slate-500">Fart Cloak, Sword of Cringe, Drip Armor</span>
+                        <button onclick="selectArticle('official-topup')" class="p-4 rounded-2xl bg-neon-emerald/10 hover:bg-neon-emerald/20 border border-neon-emerald/30 text-left transition cursor-pointer">
+                            <span class="text-xs font-extrabold text-neon-emerald uppercase block mb-1">Platform Rebates</span>
+                            <span class="font-display font-bold text-sm block text-slate-900 dark:text-white">Official Top-Up & Points →</span>
+                            <span class="text-xs text-slate-500">10% Gem Rebate & $1 = 1 Point</span>
                         </button>
                         <button onclick="selectArticle('zones-bosses')" class="p-4 rounded-2xl bg-clash-500/10 hover:bg-clash-500/20 border border-clash-500/30 text-left transition cursor-pointer">
                             <span class="text-xs font-extrabold text-clash-500 uppercase block mb-1">World & Loot Risk</span>
@@ -594,29 +594,13 @@
                 `
             },
             {
-                id: 'cursed-gear',
-                title: 'Cursed Gear & Shady Merchant',
-                category: 'Gear & Economy',
-                icon: 'fa-solid fa-hat-wizard',
-                badge: '4 VERIFIED ITEMS',
-                updatedAt: 'Nov 2026',
-                summary: 'All 4 verified Cursed Gear items in Meme Clash: Let’s Have Fun (Fart Cloak, Sword of Cringe, Drip Armor, Legendary Rebirth Ring) and how to obtain gear from mobs, quests, and the Shady Merchant.',
-                widgetType: 'gear-inspector',
-                content: `
-                    <h3 class="font-display font-bold text-xl mb-2">How to Obtain Gear</h3>
-                    <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
-                        Equipment in <strong>Meme Clash: Let's Have Fun</strong> is earned by <strong>defeating mobs</strong>, <strong>completing quests</strong>, farming <strong>PvP Zones</strong> and <strong>World Bosses</strong>, or haggling directly with the <strong>Shady Merchant</strong>—a sketchy vendor who offers high-value deals.
-                    </p>
-                `
-            },
-            {
                 id: 'rebirth-system',
                 title: 'Rebirth & Progression Guide (Lv. 1–100+)',
                 category: 'Core Mechanics',
                 icon: 'fa-solid fa-fire-flame-curved',
                 badge: 'PROGRESSION',
                 updatedAt: 'Nov 2026',
-                summary: 'Verified leveling curve (fast auto-battle up to Level 100, slower endgame grind) and the max-level Rebirth system for unlocking broken new skill trees and chasing the Legendary Rebirth Ring.',
+                summary: 'Verified leveling curve (fast auto-battle up to Level 100, slower endgame grind) and the max-level Rebirth system for unlocking broken new skill trees.',
                 widgetType: 'rebirth-calc',
                 content: `
                     <h3 class="font-display font-bold text-xl mb-3">Lv. 1–100+ Progression Curve & Rebirth System</h3>
@@ -631,7 +615,7 @@
                         <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border-l-4 border-clash-500">
                             <h4 class="font-display font-bold text-base text-clash-500 mb-1">Stage 2: Level 100+ & Max-Level Rebirth</h4>
                             <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                                After Level 100, leveling slows down into the endgame loop. Once your hero hits <strong>max level</strong>, you can <strong>Rebirth</strong> to unlock <strong>broken new skill trees</strong> and push for the <strong>Legendary Rebirth Ring</strong>.
+                                After Level 100, leveling slows down into the endgame loop. Once your hero hits <strong>max level</strong>, you can <strong>Rebirth</strong> to unlock <strong>broken new skill trees</strong> and push your power even further.
                             </p>
                         </div>
 
@@ -660,6 +644,71 @@
                 `
             },
             {
+                id: 'official-topup',
+                title: 'Official Top-Up & Points Rebate Guide',
+                category: 'Top-Up & Rebates',
+                icon: 'fa-solid fa-gem',
+                badge: '10% REBATE',
+                updatedAt: 'Nov 2026',
+                summary: 'Welcome to the # official-topup channel! Top up your platform balance via official channels to enjoy a 10% Gem Rebate and earn points ($1 = 1 Point) to redeem exclusive Gift Code Bundles.',
+                widgetType: 'topup-rebate',
+                content: `
+                    <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-500/15 via-clash-500/10 to-amber-500/10 border border-emerald-500/30 mb-6 flex items-start gap-3.5">
+                        <div class="w-11 h-11 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-lg shrink-0 shadow-md">
+                            <i class="fa-solid fa-hashtag"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-base sm:text-lg text-slate-900 dark:text-white mb-1">Welcome to the # official-topup channel!</h3>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                Top up your platform balance via official channels to enjoy a <strong>10% Gem Rebate</strong> and earn points to redeem exclusive <strong>Gift Code Bundles</strong>!
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 class="font-display font-bold text-xl mb-3">Dual Rebate Rules</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 border-l-4 border-l-neon-cyan">
+                            <div class="flex items-center gap-2.5 mb-2">
+                                <span class="w-7 h-7 rounded-lg bg-cyan-500/15 text-cyan-400 font-display font-extrabold text-sm flex items-center justify-center">1</span>
+                                <h4 class="font-display font-bold text-base text-slate-900 dark:text-white">10% Gem Rebate</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                Spend with platform balance in-game to get a <strong>10% gem rebate</strong> on every transaction.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 border-l-4 border-l-amber-500">
+                            <div class="flex items-center gap-2.5 mb-2">
+                                <span class="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-400 font-display font-extrabold text-sm flex items-center justify-center">2</span>
+                                <h4 class="font-display font-bold text-base text-slate-900 dark:text-white">$1 = 1 Point</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                Earn points by topping up your platform balance (<strong>$1 = 1 Point</strong>). Redeem points for special gift code rewards.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 class="font-display font-bold text-xl mb-3">Official Top-Up Link</h3>
+                    <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-clash-500/35 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-2">
+                        <div class="min-w-0">
+                            <span class="text-[11px] font-extrabold uppercase tracking-wider text-clash-500 block mb-1">Official Website Portal</span>
+                            <a href="https://mengchuo.mcsiqi.com/h5sdk/com/r_login.html" target="_blank" rel="noopener noreferrer" class="font-mono text-xs sm:text-sm text-clash-600 dark:text-clash-300 hover:underline break-all font-semibold">
+                                https://mengchuo.mcsiqi.com/h5sdk/com/r_login.html
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0">
+                            <button onclick="copyCodeText('https://mengchuo.mcsiqi.com/h5sdk/com/r_login.html')" class="px-3.5 py-2.5 rounded-xl bg-slate-200/80 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-xs font-bold transition cursor-pointer">
+                                <i class="fa-regular fa-copy mr-1"></i> Copy Link
+                            </button>
+                            <a href="https://mengchuo.mcsiqi.com/h5sdk/com/r_login.html" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-clash-600 to-neon-pink text-white text-xs font-bold shadow-md hover:opacity-95 transition inline-flex items-center gap-1.5">
+                                <span>Open Top-Up</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                `
+            },
+            {
                 id: 'guilds-community',
                 title: 'Guild Meme Wars, Reviews & Official Links',
                 category: 'Guilds & Community',
@@ -681,14 +730,14 @@
                             <ul class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-1.5 list-disc pl-4">
                                 <li>Fast, satisfying 98% auto-battle progression up to Level 100.</li>
                                 <li>Innovative risk-reward PvP loot system where PvP Zones drop higher-power gear.</li>
-                                <li>Chaotic meme humor featuring 3,000+ memes, Cursed Gear, and custom World Boss theme music.</li>
+                                <li>Chaotic meme humor featuring 3,000+ memes and custom World Boss theme music.</li>
                             </ul>
                         </div>
                         <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/25">
                             <h4 class="font-display font-bold text-sm text-amber-500 mb-2"><i class="fa-solid fa-comment-dots mr-1.5"></i> Top Community Feature Requests</h4>
                             <ul class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-1.5 list-disc pl-4">
                                 <li>Players have requested <strong>character appearance customization</strong> options so heroes aren't locked to random generated looks.</li>
-                                <li>More frequent guild events and additional Cursed Gear sets in future updates past v1.0.4.</li>
+                                <li>More frequent guild events and new endgame content in future updates past v1.0.4.</li>
                             </ul>
                         </div>
                     </div>
@@ -733,7 +782,6 @@
                 icon: 'fa-solid fa-shield-halved',
                 colorClass: 'text-rose-400 bg-rose-500/15 border-rose-500/30',
                 playstyle: 'Frontline melee brawler combining High Defense to soak damage with High Burst close-range strikes against single targets and World Bosses.',
-                bestGear: 'Drip Armor 💧 (+999 style intimidation) & Sword of Cringe ⚔️',
                 zoneTip: 'Excels at surviving heavy hits in frontline PvP Zone clashes—just remember dying to another player in PvP Zones drops your higher-power items!'
             },
             mage: {
@@ -744,7 +792,6 @@
                 icon: 'fa-solid fa-hat-wizard',
                 colorClass: 'text-indigo-400 bg-indigo-500/15 border-indigo-500/30',
                 playstyle: 'Ranged (Remote) spellcaster unleashing wide AoE spells and High Damage bursts ("Tap screen = skills go BRRR, monsters go REEE") to wipe entire monster packs quickly.',
-                bestGear: 'Sword of Cringe ⚔️ & Legendary Rebirth Ring 💍',
                 zoneTip: 'Fastest mob clearer for 98% auto-battle farming in Safe Zones, Troll Forest, and Cave of Vibes up to Level 100.'
             },
             taoist: {
@@ -755,7 +802,6 @@
                 icon: 'fa-solid fa-yin-yang',
                 colorClass: 'text-emerald-400 bg-emerald-500/15 border-emerald-500/30',
                 playstyle: 'Versatile master of Healing, spiritual Summons, and High Survival—keeping itself and allies alive while summoned spirits pressure enemies.',
-                bestGear: 'Fart Cloak 🌬️ (distraction + emotional damage) & Legendary Rebirth Ring 💍',
                 zoneTip: 'Top pick for sustained AFK farming, soloing tough encounters, and backing up your Discord squad in Guild Meme Wars.'
             }
         };
@@ -792,46 +838,6 @@
             { code: 'BZ888', rewards: 'In-game Rewards (Verified Active)', status: 'Active' },
             { code: 'BZ999', rewards: 'In-game Rewards (Verified Active)', status: 'Active' },
             { code: 'HPLB777', rewards: 'In-game Rewards (Verified Active)', status: 'Active' }
-        ];
-
-        // Strictly Verified Cursed Gear Dataset
-        const CURSED_GEAR_DATA = [
-            {
-                id: 'fart-cloak',
-                name: 'Fart Cloak 🌬️',
-                slot: 'Cloak / Distraction Gear',
-                icon: 'fa-solid fa-wind',
-                accent: 'text-emerald-500 bg-emerald-500/15 border-emerald-500/30',
-                source: 'Mobs, Quests & Shady Merchant',
-                summary: 'Prioritizes distraction over stealth, inflicting both physical damage and emotional damage on enemies.'
-            },
-            {
-                id: 'sword-of-cringe',
-                name: 'Sword of Cringe ⚔️',
-                slot: 'Cursed Weapon',
-                icon: 'fa-solid fa-khanda',
-                accent: 'text-neon-pink bg-neon-pink/15 border-neon-pink/30',
-                source: 'Boss Drops, Quests & Shady Merchant',
-                summary: 'Turns fearsome bosses into crying Wojaks—they literally can’t even.'
-            },
-            {
-                id: 'drip-armor',
-                name: 'Drip Armor 💧',
-                slot: 'Armor Slot (+999 Style)',
-                icon: 'fa-solid fa-shirt',
-                accent: 'text-cyan-400 bg-cyan-500/15 border-cyan-500/30',
-                source: 'PvP Zones, Quests & Shady Merchant',
-                summary: 'Grants +999 style, leaving enemies far too intimidated by your fit to even swing.'
-            },
-            {
-                id: 'rebirth-ring',
-                name: 'Legendary Rebirth Ring 💍',
-                slot: 'Endgame Rebirth Relic',
-                icon: 'fa-solid fa-ring',
-                accent: 'text-amber-500 bg-amber-500/15 border-amber-500/30',
-                source: 'Max-Level Rebirth Progression',
-                summary: 'The ultimate Rebirth chase item that flips fights right in your favor when you are about to take an L.'
-            }
         ];
 
         /**
@@ -872,7 +878,7 @@
 
         function loadWikiData() {
             try {
-                const stored = localStorage.getItem('mc_wiki_pages_verified_v4');
+                const stored = localStorage.getItem('mc_wiki_pages_verified_v5');
                 if (stored) {
                     wikiPages = JSON.parse(stored);
                 } else {
@@ -894,7 +900,7 @@
         }
 
         function saveWikiToStorage() {
-            localStorage.setItem('mc_wiki_pages_verified_v4', JSON.stringify(wikiPages));
+            localStorage.setItem('mc_wiki_pages_verified_v5', JSON.stringify(wikiPages));
             updatePageCountBadge();
         }
 
@@ -921,9 +927,9 @@
             const categoryOrder = [
                 'Getting Started',
                 'World & Bosses',
-                'Gear & Economy',
                 'Core Mechanics',
                 'Codes & Rewards',
+                'Top-Up & Rebates',
                 'Guilds & Community',
                 'Support & FAQ'
             ];
@@ -1142,8 +1148,8 @@
                     `;
                 }).join('');
 
-                const traitPills = (cls.traits || []).map(t => `
-                    <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-clash-500/15 text-clash-500 border border-clash-500/25">${escapeHtml(t)}</span>
+                const traitPills = cls.traits.map(t => `
+                    <span class="px-2.5 py-1 rounded-lg text-xs font-bold border ${cls.colorClass}">${escapeHtml(t)}</span>
                 `).join('');
 
                 return `
@@ -1153,33 +1159,59 @@
                         </div>
                         <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 space-y-4">
                             <div class="flex flex-wrap items-center justify-between gap-3">
-                                <div class="flex items-center gap-3.5">
+                                <div class="flex items-center gap-3">
                                     <div class="w-12 h-12 rounded-2xl border flex items-center justify-center text-xl ${cls.colorClass}">
                                         <i class="${cls.icon}"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-display font-extrabold text-xl text-slate-900 dark:text-white">${cls.name}</h4>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">${cls.role}</span>
+                                        <h3 class="font-display font-extrabold text-xl text-slate-900 dark:text-white">${cls.name}</h3>
+                                        <p class="text-xs font-semibold text-slate-500 dark:text-slate-400">${cls.role}</p>
                                     </div>
                                 </div>
-                                <div class="flex flex-wrap items-center gap-1.5">
+                                <div class="flex flex-wrap gap-1.5">
                                     ${traitPills}
                                 </div>
                             </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs sm:text-sm">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm">
                                 <div class="p-3.5 rounded-xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800">
                                     <span class="text-[11px] font-bold uppercase tracking-wider text-clash-500 block mb-1">Combat Playstyle</span>
                                     <p class="text-slate-700 dark:text-slate-300 leading-relaxed">${cls.playstyle}</p>
                                 </div>
                                 <div class="p-3.5 rounded-xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800">
-                                    <span class="text-[11px] font-bold uppercase tracking-wider text-neon-pink block mb-1">Cursed Gear Synergy</span>
-                                    <p class="text-slate-700 dark:text-slate-300 leading-relaxed">${cls.bestGear}</p>
-                                </div>
-                                <div class="p-3.5 rounded-xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800">
                                     <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-500 block mb-1">Zone & PvP Strategy</span>
                                     <p class="text-slate-700 dark:text-slate-300 leading-relaxed">${cls.zoneTip}</p>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (type === 'topup-rebate') {
+                return `
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="font-display font-bold text-base sm:text-lg"><i class="fa-solid fa-calculator mr-1.5 text-clash-500"></i> Top-Up Points & 10% Gem Rebate Calculator</h3>
+                            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-500">$1 = 1 Point • 10% Rebate</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="topup-usd-input" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">Platform Top-Up Amount (USD $)</label>
+                                <input type="number" id="topup-usd-input" min="1" max="10000" value="50" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm font-mono focus:ring-2 focus:ring-clash-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label for="topup-gems-input" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">In-Game Gems Spent via Balance</label>
+                                <input type="number" id="topup-gems-input" min="0" max="10000000" value="5000" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm font-mono focus:ring-2 focus:ring-clash-500 focus:outline-none">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-center">
+                            <div class="p-3.5 rounded-xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800">
+                                <span class="text-xs text-slate-400 block">Points Earned ($1 = 1 Point)</span>
+                                <span id="topup-points-out" class="font-display font-extrabold text-lg text-amber-500">50 Points</span>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800">
+                                <span class="text-xs text-slate-400 block">10% Gem Rebate Returned</span>
+                                <span id="topup-rebate-out" class="font-display font-extrabold text-lg text-neon-cyan">+500 Gems</span>
                             </div>
                         </div>
                     </div>
@@ -1243,53 +1275,6 @@
                                 <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">CUSTOM THEME MUSIC</span>
                             </div>
                             <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Massive chonky bosses introduced in recent updates that play their own custom theme music and drop heavy loot.</p>
-                        </div>
-                    </div>
-                `;
-            }
-
-            if (type === 'gear-inspector') {
-                const cards = CURSED_GEAR_DATA.map(gear => `
-                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 hover:border-clash-500/50 transition flex items-start gap-3.5">
-                        <div class="w-12 h-12 rounded-xl border flex items-center justify-center text-xl shrink-0 ${gear.accent}">
-                            <i class="${gear.icon}"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-                                <h4 class="font-display font-bold text-base text-slate-900 dark:text-white">${gear.name}</h4>
-                                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-clash-500/15 text-clash-500">${gear.slot}</span>
-                            </div>
-                            <div class="text-xs font-mono text-slate-400 mb-1.5">Source: ${gear.source}</div>
-                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">${gear.summary}</p>
-                        </div>
-                    </div>
-                `).join('');
-
-                return `
-                    <div class="space-y-5">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            ${cards}
-                        </div>
-
-                        <!-- Interactive Shady Merchant Deal Simulator (Strictly Verified 4 Items) -->
-                        <div class="p-5 rounded-2xl bg-slate-900 text-slate-100 border border-clash-500/40 space-y-3">
-                            <div class="flex flex-wrap items-center justify-between gap-2">
-                                <div class="flex items-center gap-2.5">
-                                    <div class="w-9 h-9 rounded-xl bg-clash-500/20 text-clash-400 flex items-center justify-center">
-                                        <i class="fa-solid fa-user-secret"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-display font-bold text-base text-white">Shady Merchant — Deal Inspector</h4>
-                                        <span class="text-[11px] text-slate-400">Sketchy vendor offering high-value Cursed Gear deals</span>
-                                    </div>
-                                </div>
-                                <button onclick="rollShadyMerchantDeal()" class="px-3.5 py-2 rounded-xl bg-clash-600 hover:bg-clash-500 text-white text-xs font-bold transition cursor-pointer">
-                                    <i class="fa-solid fa-shuffle mr-1"></i> Haggle New Offer
-                                </button>
-                            </div>
-                            <div id="shady-merchant-offer" class="p-3.5 rounded-xl bg-slate-950/90 border border-slate-800 text-xs sm:text-sm text-slate-300">
-                                "Psst... looking to upgrade? I've got a high-value deal on <strong>Drip Armor 💧</strong> (+999 style so enemies are too intimidated to swing). Click <em>Haggle New Offer</em> to check my stash!"
-                            </div>
                         </div>
                     </div>
                 `;
@@ -1467,6 +1452,23 @@
         }
 
         function initWidgetEvents(type) {
+            if (type === 'topup-rebate') {
+                const usdInput = document.getElementById('topup-usd-input');
+                const gemsInput = document.getElementById('topup-gems-input');
+                if (!usdInput || !gemsInput) return;
+                const updateTopupCalc = () => {
+                    const usd = Math.max(0, parseFloat(usdInput.value) || 0);
+                    const gems = Math.max(0, parseFloat(gemsInput.value) || 0);
+                    const points = Math.floor(usd);
+                    const rebateGems = Math.floor(gems * 0.10);
+                    document.getElementById('topup-points-out').textContent = `${points.toLocaleString()} Point${points === 1 ? '' : 's'}`;
+                    document.getElementById('topup-rebate-out').textContent = `+${rebateGems.toLocaleString()} Gems`;
+                };
+                usdInput.addEventListener('input', updateTopupCalc);
+                gemsInput.addEventListener('input', updateTopupCalc);
+                updateTopupCalc();
+            }
+
             if (type === 'rebirth-calc') {
                 const slider = document.getElementById('prog-level-slider');
                 if (!slider) return;
@@ -1492,13 +1494,6 @@
                 slider.addEventListener('input', update);
                 update();
             }
-        }
-
-        function rollShadyMerchantDeal() {
-            const box = document.getElementById('shady-merchant-offer');
-            if (!box) return;
-            const item = CURSED_GEAR_DATA[Math.floor(Math.random() * CURSED_GEAR_DATA.length)];
-            box.innerHTML = `"Psst... special sketchy deal just for you: <strong>${item.name}</strong> (${item.slot}). ${item.summary}"`;
         }
 
         function selectClassTab(key) {
@@ -1912,7 +1907,7 @@
                 return;
             }
             openConfirmModal('Reset Wiki to Defaults?', 'All custom edits and saved screenshots will be restored to the official verified encyclopedia.', () => {
-                localStorage.removeItem('mc_wiki_pages_verified_v4');
+                localStorage.removeItem('mc_wiki_pages_verified_v5');
                 localStorage.removeItem('mc_wiki_redeemed_codes_v1');
                 localStorage.removeItem('mc_wiki_screenshots_v1');
                 loadWikiData();
