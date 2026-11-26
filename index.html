@@ -97,8 +97,9 @@
                     <span id="sidebar-toggle-label">Hide</span>
                 </button>
                 <a href="#" onclick="selectArticle('welcome'); return false;" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-clash-600 via-neon-pink to-neon-amber flex items-center justify-center text-white font-display font-extrabold text-xl shadow-lg shadow-clash-500/25 group-hover:scale-105 transition-transform">
-                        MC
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-clash-600 via-neon-pink to-neon-amber flex items-center justify-center text-white font-display font-extrabold text-xl shadow-lg shadow-clash-500/25 group-hover:scale-105 transition-transform overflow-hidden border border-clash-500/30">
+                        <img src="./memeclash.jpg" alt="Meme Clash Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span class="hidden">MC</span>
                     </div>
                     <div>
                         <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-clash-600 to-neon-pink dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
@@ -1006,8 +1007,13 @@
                     </div>
 
                     <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-clash-600 to-neon-pink text-white flex items-center justify-center text-xl sm:text-2xl shrink-0 shadow-lg shadow-clash-500/20">
-                            <i class="${page.icon || 'fa-solid fa-book'}"></i>
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-clash-600 to-neon-pink text-white flex items-center justify-center text-xl sm:text-2xl shrink-0 shadow-lg shadow-clash-500/20 overflow-hidden border border-clash-500/30">
+                            ${page.id === 'welcome' ? `
+                                <img src="./memeclash.jpg" alt="Meme Clash Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                                <i class="${page.icon || 'fa-solid fa-gamepad'} hidden"></i>
+                            ` : `
+                                <i class="${page.icon || 'fa-solid fa-book'}"></i>
+                            `}
                         </div>
                         <div>
                             <h1 class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight text-slate-900 dark:text-white mb-2">
