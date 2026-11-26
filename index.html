@@ -515,7 +515,7 @@
                             src="./meme1.jpg" 
                             alt="Meme Clash: Let's Have Fun — 3000+ Hilarious Memes Squad" 
                             class="w-full max-h-[380px] sm:max-h-[440px] object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
-                            onerror="this.parentElement.style.display='none';"
+                            onerror="this.onerror=null; this.src='https://placehold.co/1200x520/1e1b4b/f59e0b?text=3000%2B+Hilarious+Memes+(Upload+meme1.jpg+to+GitHub+Root)';"
                         >
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 sm:p-5 flex flex-wrap items-end justify-between gap-3">
                             <div>
@@ -984,7 +984,7 @@
 
         function loadWikiData() {
             try {
-                const stored = localStorage.getItem('mc_wiki_pages_verified_v5');
+                const stored = localStorage.getItem('mc_wiki_pages_verified_v6');
                 if (stored) {
                     wikiPages = JSON.parse(stored);
                 } else {
@@ -1006,7 +1006,7 @@
         }
 
         function saveWikiToStorage() {
-            localStorage.setItem('mc_wiki_pages_verified_v5', JSON.stringify(wikiPages));
+            localStorage.setItem('mc_wiki_pages_verified_v6', JSON.stringify(wikiPages));
             updatePageCountBadge();
         }
 
@@ -2022,7 +2022,7 @@
                 return;
             }
             openConfirmModal('Reset Wiki to Defaults?', 'All custom edits and saved screenshots will be restored to the official verified encyclopedia.', () => {
-                localStorage.removeItem('mc_wiki_pages_verified_v5');
+                localStorage.removeItem('mc_wiki_pages_verified_v6');
                 localStorage.removeItem('mc_wiki_redeemed_codes_v1');
                 localStorage.removeItem('mc_wiki_screenshots_v1');
                 loadWikiData();
