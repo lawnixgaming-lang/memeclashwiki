@@ -92,8 +92,9 @@
             
             <!-- Left: Mobile Menu Toggle & Brand Logo -->
             <div class="flex items-center gap-3">
-                <button id="mobile-menu-btn" aria-label="Toggle Navigation" class="lg:hidden p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                    <i class="fa-solid fa-bars text-lg"></i>
+                <button id="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Open or Hide Navigation Sidebar" class="flex items-center gap-2 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:border-clash-500 transition cursor-pointer" title="Open or Hide Navigation Menu">
+                    <i id="sidebar-toggle-icon" class="fa-solid fa-sidebar text-clash-500 fa-bars"></i>
+                    <span id="sidebar-toggle-label">Hide</span>
                 </button>
                 <a href="#" onclick="selectArticle('welcome'); return false;" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-clash-600 via-neon-pink to-neon-amber flex items-center justify-center text-white font-display font-extrabold text-xl shadow-lg shadow-clash-500/25 group-hover:scale-105 transition-transform">
@@ -154,14 +155,15 @@
         <div id="sidebar-backdrop" onclick="closeMobileSidebar()" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-40 hidden lg:hidden"></div>
 
         <!-- Left Sidebar Navigation -->
-        <aside id="wiki-sidebar" class="fixed lg:sticky top-0 lg:top-22 left-0 z-50 lg:z-10 h-full lg:h-[calc(100vh-7rem)] w-72 shrink-0 bg-white dark:bg-[#0f131c] lg:bg-transparent lg:dark:bg-transparent border-r lg:border-r-0 border-slate-200 dark:border-slate-800 p-5 lg:p-0 overflow-y-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-200 ease-out flex flex-col justify-between">
+        <aside id="wiki-sidebar" class="fixed lg:sticky top-0 lg:top-22 left-0 z-50 lg:z-10 h-full lg:h-[calc(100vh-7rem)] w-72 shrink-0 bg-white dark:bg-[#0f131c] lg:bg-transparent lg:dark:bg-transparent border-r lg:border-r-0 border-slate-200 dark:border-slate-800 p-5 lg:p-0 overflow-y-auto transform -translate-x-full lg:translate-x-0 transition-all duration-200 ease-out flex flex-col justify-between">
             
             <div class="space-y-6">
-                <!-- Mobile Drawer Header -->
-                <div class="flex items-center justify-between lg:hidden pb-4 border-b border-slate-200 dark:border-slate-800">
-                    <span class="font-display font-bold text-lg">Wiki Navigation</span>
-                    <button onclick="closeMobileSidebar()" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
-                        <i class="fa-solid fa-xmark text-lg"></i>
+                <!-- Sidebar Drawer Header (Mobile & Desktop Hide Control) -->
+                <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
+                    <span class="font-display font-bold text-sm uppercase tracking-wider text-slate-500 dark:text-slate-400">Wiki Menu</span>
+                    <button onclick="toggleSidebar()" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-clash-500 transition cursor-pointer" title="Hide Navigation Menu">
+                        <i class="fa-solid fa-eye-slash text-[11px]"></i>
+                        <span>Hide</span>
                     </button>
                 </div>
 
@@ -696,6 +698,7 @@
         let redeemedCodes = {};
         let userScreenshots = [];
         let selectedClassKey = 'warrior';
+        let isSidebarOpen = window.innerWidth >= 1024;
 
         const STAFF_MODE_PASSWORD = 'lawnix';
         const STAFF_SESSION_KEY = 'mc_wiki_staff_unlocked_v1';
@@ -821,6 +824,7 @@
             selectArticle(activeArticleId);
             setupSearchListener();
             setupKeyboardShortcuts();
+            applySidebarState();
         });
 
         function initTheme() {
@@ -934,7 +938,10 @@
                     btn.onclick = () => {
                         clearSearch();
                         selectArticle(page.id);
-                        closeMobileSidebar();
+                        if (window.innerWidth < 1024) {
+                            isSidebarOpen = false;
+                            applySidebarState();
+                        }
                     };
                     btn.className = `w-full flex items-center justify-between gap-2 px-3 py-2.5 rounded-xl text-left text-sm font-medium transition cursor-pointer ${
                         isActive 
@@ -1584,15 +1591,49 @@
                 }
             });
 
-            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-                document.getElementById('wiki-sidebar').classList.remove('-translate-x-full');
-                document.getElementById('sidebar-backdrop').classList.remove('hidden');
+            window.addEventListener('resize', () => {
+                applySidebarState();
             });
         }
 
+        function toggleSidebar() {
+            isSidebarOpen = !isSidebarOpen;
+            applySidebarState();
+        }
+
         function closeMobileSidebar() {
-            document.getElementById('wiki-sidebar').classList.add('-translate-x-full');
-            document.getElementById('sidebar-backdrop').classList.add('hidden');
+            if (window.innerWidth < 1024) {
+                isSidebarOpen = false;
+                applySidebarState();
+            }
+        }
+
+        function applySidebarState() {
+            const sidebar = document.getElementById('wiki-sidebar');
+            const backdrop = document.getElementById('sidebar-backdrop');
+            const label = document.getElementById('sidebar-toggle-label');
+            const icon = document.getElementById('sidebar-toggle-icon');
+            if (!sidebar) return;
+
+            const isDesktop = window.innerWidth >= 1024;
+
+            if (isSidebarOpen) {
+                sidebar.classList.remove('-translate-x-full', 'lg:hidden');
+                sidebar.classList.add('translate-x-0', 'lg:flex');
+                if (!isDesktop) {
+                    backdrop.classList.remove('hidden');
+                } else {
+                    backdrop.classList.add('hidden');
+                }
+                if (label) label.textContent = 'Hide';
+                if (icon) icon.className = 'fa-solid fa-eye-slash text-clash-500';
+            } else {
+                sidebar.classList.add('-translate-x-full', 'lg:hidden');
+                sidebar.classList.remove('translate-x-0', 'lg:flex');
+                backdrop.classList.add('hidden');
+                if (label) label.textContent = 'Open';
+                if (icon) icon.className = 'fa-solid fa-bars text-clash-500';
+            }
         }
 
         function restoreStaffSession() {
