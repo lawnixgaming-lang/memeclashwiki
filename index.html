@@ -279,22 +279,6 @@
                 <!-- Populated dynamically via JS -->
             </article>
 
-            <!-- Mobile Quick Page Switcher Bar (Bottom Prev/Next & Menu for easy thumb navigation) -->
-            <div class="mt-6 lg:hidden flex items-center justify-between gap-2 p-3 rounded-2xl bg-white dark:bg-[#131824] border border-slate-200 dark:border-slate-800 shadow-xs">
-                <button onclick="navigateAdjacentPage(-1)" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center justify-center gap-1.5 active:scale-95 transition cursor-pointer">
-                    <i class="fa-solid fa-chevron-left text-clash-500"></i>
-                    <span>Prev Page</span>
-                </button>
-                <button onclick="toggleSidebar()" class="py-2.5 px-4 rounded-xl bg-clash-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 active:scale-95 transition cursor-pointer">
-                    <i class="fa-solid fa-list-ul"></i>
-                    <span>Topics</span>
-                </button>
-                <button onclick="navigateAdjacentPage(1)" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center justify-center gap-1.5 active:scale-95 transition cursor-pointer">
-                    <span>Next Page</span>
-                    <i class="fa-solid fa-chevron-right text-clash-500"></i>
-                </button>
-            </div>
-
         </main>
     </div>
 
@@ -977,7 +961,7 @@
 
         function loadWikiData() {
             try {
-                const stored = localStorage.getItem('mc_wiki_pages_verified_v6');
+                const stored = localStorage.getItem('mc_wiki_pages_verified_v7');
                 if (stored) {
                     wikiPages = JSON.parse(stored);
                 } else {
@@ -995,6 +979,11 @@
                 redeemedCodes = {};
                 userScreenshots = [];
             }
+            updatePageCountBadge();
+        }
+
+        function saveWikiToStorage() {
+            localStorage.setItem('mc_wiki_pages_verified_v7', JSON.stringify(wikiPages));
             updatePageCountBadge();
         }
 
@@ -2008,7 +1997,7 @@
                 return;
             }
             openConfirmModal('Reset Wiki to Defaults?', 'All custom edits and saved screenshots will be restored to the official verified encyclopedia.', () => {
-                localStorage.removeItem('mc_wiki_pages_verified_v6');
+                localStorage.removeItem('mc_wiki_pages_verified_v7');
                 localStorage.removeItem('mc_wiki_redeemed_codes_v1');
                 localStorage.removeItem('mc_wiki_screenshots_v1');
                 loadWikiData();
