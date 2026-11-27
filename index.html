@@ -213,7 +213,7 @@
         <aside id="wiki-sidebar" class="fixed lg:sticky top-16 left-0 z-30 w-72 shrink-0 h-[calc(100vh-4rem)] bg-white/95 dark:bg-[#111622]/95 lg:bg-transparent border-r border-slate-200/80 dark:border-slate-800/80 overflow-y-auto p-4 transition-transform duration-200 -translate-x-full lg:translate-x-0">
             <div class="flex items-center justify-between mb-3 px-2">
                 <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500">Official Wiki Topics</span>
-                <span id="page-count-badge" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400">10 Pages</span>
+                <span id="page-count-badge" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400">12 Pages</span>
             </div>
 
             <!-- Category Navigation Tree -->
@@ -834,48 +834,52 @@
                 title: 'Official Top-Up & Points Rebate Guide',
                 icon: 'fa-solid fa-gem',
                 updated: 'Nov 2026',
-                summary: 'Top up your platform balance via official channels to enjoy a 10% Gem Rebate and earn points ($1 = 1 Point) to redeem exclusive Gift Code Bundles.',
+                summary: 'Welcome to #official-topup! Top up your platform balance via official channels to enjoy a 10% Gem Rebate and earn points ($1 = 1 Point) to redeem exclusive Gift Code Bundles.',
                 widget: 'topup-rebate',
                 content: `
                     <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-purple-500/15 via-fuchsia-500/10 to-amber-500/10 border border-purple-500/30 mb-6">
+                        <div class="flex items-center gap-2 text-purple-400 font-display font-bold text-xs uppercase tracking-wider mb-1">
+                            <i class="fa-solid fa-hashtag"></i>
+                            <span>official-topup</span>
+                        </div>
                         <p class="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed">
-                            Top up your platform balance via official channels to enjoy a <strong>10% Gem Rebate</strong> and earn points to redeem exclusive <strong>Gift Code Bundles</strong>!
+                            Welcome to the <strong>#official-topup</strong> channel! Top up your platform balance via official channels to enjoy a <strong>10% Gem Rebate</strong> and earn points to redeem exclusive <strong>Gift Code Bundles</strong>!
                         </p>
                     </div>
 
-                    <h2 id="dual-rebate-rules" class="font-display font-bold text-xl text-slate-900 dark:text-white mb-3">Dual Rebate Rules</h2>
+                    <h2 id="dual-rebate-rules" class="font-display font-bold text-xl text-slate-900 dark:text-white mt-6 mb-3">Dual Rebate Rules</h2>
                     <div class="grid sm:grid-cols-2 gap-4 mb-6">
-                        <div class="p-4 rounded-2xl bg-white dark:bg-[#141a29] border border-purple-500/30 flex items-start gap-3.5">
-                            <span class="w-8 h-8 rounded-xl bg-purple-500/15 text-purple-400 font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">1</span>
-                            <div>
-                                <h3 class="font-display font-bold text-sm sm:text-base text-purple-400 mb-1">10% Gem Rebate</h3>
-                                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                    Spend with platform balance in-game to get a <strong>10% gem rebate</strong> on every transaction.
-                                </p>
+                        <div class="p-5 rounded-2xl bg-white dark:bg-[#141a29] border border-purple-500/30">
+                            <div class="flex items-center gap-2.5 mb-2">
+                                <span class="w-7 h-7 rounded-xl bg-purple-500/15 text-purple-400 font-display font-extrabold text-xs flex items-center justify-center shrink-0">1</span>
+                                <h3 class="font-display font-bold text-base text-purple-400">10% Gem Rebate</h3>
                             </div>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Spend with platform balance in-game to get a <strong>10% gem rebate</strong> on every transaction.
+                            </p>
                         </div>
 
-                        <div class="p-4 rounded-2xl bg-white dark:bg-[#141a29] border border-amber-500/30 flex items-start gap-3.5">
-                            <span class="w-8 h-8 rounded-xl bg-amber-500/15 text-amber-400 font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">2</span>
-                            <div>
-                                <h3 class="font-display font-bold text-sm sm:text-base text-amber-400 mb-1">$1 = 1 Point</h3>
-                                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                    Earn points by topping up your platform balance (<strong>$1 = 1 Point</strong>). Redeem points for special gift code rewards.
-                                </p>
+                        <div class="p-5 rounded-2xl bg-white dark:bg-[#141a29] border border-amber-500/30">
+                            <div class="flex items-center gap-2.5 mb-2">
+                                <span class="w-7 h-7 rounded-xl bg-amber-500/15 text-amber-400 font-display font-extrabold text-xs flex items-center justify-center shrink-0">2</span>
+                                <h3 class="font-display font-bold text-base text-amber-400">$1 = 1 Point</h3>
                             </div>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Earn points by topping up your platform balance (<strong>$1 = 1 Point</strong>). Redeem points for special gift code rewards.
+                            </p>
                         </div>
                     </div>
 
-                    <h2 id="official-topup-link" class="font-display font-bold text-xl text-slate-900 dark:text-white mb-3">Official Top-Up Link</h2>
-                    <div class="p-4 sm:p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <h2 id="official-topup-link" class="font-display font-bold text-xl text-slate-900 dark:text-white mt-6 mb-3">Official Top-Up Link</h2>
+                    <div class="p-5 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-slate-50 to-purple-500/10 dark:from-emerald-950/25 dark:via-[#0b0e14] dark:to-purple-950/25 border border-emerald-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div class="min-w-0">
-                            <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-400">Official Website Portal</span>
-                            <p class="font-mono text-xs sm:text-sm text-slate-800 dark:text-slate-200 truncate mt-1">
+                            <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-500">Official Website Portal</span>
+                            <p class="font-mono text-xs sm:text-sm text-slate-800 dark:text-slate-200 break-all mt-1">
                                 https://mengchuo.mcsiqi.com/h5sdk/com/r_login.html
                             </p>
                         </div>
                         <a href="https://mengchuo.mcsiqi.com/h5sdk/com/r_login.html" target="_blank" rel="noopener noreferrer"
-                           class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold inline-flex items-center justify-center gap-2 shadow-md shadow-emerald-500/20 transition shrink-0">
+                           class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold inline-flex items-center justify-center gap-2 shadow-md shadow-purple-500/20 transition shrink-0">
                             <i class="fa-solid fa-gem"></i>
                             <span>Open Official Top-Up</span>
                             <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
@@ -948,6 +952,106 @@
                 `
             },
             {
+                id: 'class-change',
+                category: 'Hero Classes',
+                title: 'Class Change & Universal Merchant Guide',
+                icon: 'fa-solid fa-arrows-rotate',
+                updated: 'Nov 2026',
+                summary: 'Complete Universal Merchant Class Change guide — Class Change Requirements (1–3), Class Change Info (1–7), gear auto-conversion rules, non-converted stats, and the 3-day cooldown.',
+                widget: 'class-change-checklist',
+                content: `
+                    <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-500/15 via-purple-500/10 to-emerald-500/10 border border-amber-500/30 mb-6 flex flex-wrap items-center justify-between gap-3">
+                        <div>
+                            <span class="text-[11px] font-extrabold uppercase tracking-wider text-amber-500">Universal Merchant • I Want to Change Profession</span>
+                            <h2 id="class-change-overview" class="font-display font-bold text-lg sm:text-xl text-slate-900 dark:text-white">Class Change Requirements, Rules (1–7) & Cost</h2>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5">Verified verbatim from the in-game <strong>Universal Merchant</strong> class change panel.</p>
+                        </div>
+                        <div class="px-3.5 py-2 rounded-xl bg-slate-900/85 border border-amber-500/40 text-xs font-bold text-amber-300">
+                            <i class="fa-solid fa-scroll mr-1.5 text-red-400"></i>Class Change Cost: <span class="text-emerald-400">1/1</span>
+                        </div>
+                    </div>
+
+                    <h2 id="class-change-requirements" class="font-display font-bold text-xl text-slate-900 dark:text-white mb-3">Class Change Requirements</h2>
+                    <div class="space-y-2.5 mb-6">
+                        <div class="p-4 rounded-2xl bg-white dark:bg-[#141a29] border border-emerald-500/25 flex items-center justify-between gap-3">
+                            <div class="flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-xl bg-emerald-500/15 text-emerald-400 font-display font-extrabold text-xs flex items-center justify-center shrink-0">1</span>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200">Class Change unlocks on Day 7</span>
+                            </div>
+                            <span class="text-xs font-extrabold text-emerald-400 shrink-0">✓ (Achieved)</span>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white dark:bg-[#141a29] border border-emerald-500/25 flex items-center justify-between gap-3">
+                            <div class="flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-xl bg-emerald-500/15 text-emerald-400 font-display font-extrabold text-xs flex items-center justify-center shrink-0">2</span>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200">Unequip Lv60+ basic equip to change class</span>
+                            </div>
+                            <span class="text-xs font-extrabold text-emerald-400 shrink-0">✓ (Achieved)</span>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white dark:bg-[#141a29] border border-emerald-500/25 flex items-center justify-between gap-3">
+                            <div class="flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-xl bg-emerald-500/15 text-emerald-400 font-display font-extrabold text-xs flex items-center justify-center shrink-0">3</span>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200">CD: None</span>
+                            </div>
+                            <span class="text-xs font-extrabold text-emerald-400 shrink-0">✓ (Achieved)</span>
+                        </div>
+                    </div>
+
+                    <h2 id="class-change-info" class="font-display font-bold text-xl text-slate-900 dark:text-white mt-6 mb-3">Class Change Info (1 – 7)</h2>
+                    <div class="space-y-3 mb-6">
+                        <div class="p-4 rounded-2xl bg-white dark:bg-[#141a29] border border-slate-200 dark:border-slate-800 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-xl bg-purple-500/15 text-purple-400 font-display font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
+                                After the Class change, the <strong>Lv</strong> remains unchanged, and the <strong>Stats</strong> are changed to the new Class Stats;
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white dark:bg-[#141a29] border border-slate-200 dark:border-slate-800 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-xl bg-purple-500/15 text-purple-400 font-display font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
+                                Different Classes have different Stats, which will cause normal changes in combat power after the Class change;
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white dark:bg-[#141a29] border border-purple-500/25 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-xl bg-purple-500/20 text-purple-400 font-display font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
+                                After the Class change, the basic Gear of characters below Lv 60, <strong>Divine Seal Gear</strong>, <strong>wings</strong>, and <strong>four-elephant secondary Gear</strong> worn will <strong>Auto change</strong> to the new Class Gear (<strong>backpacks will not be converted</strong>);
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white dark:bg-[#141a29] border border-slate-200 dark:border-slate-800 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-xl bg-purple-500/15 text-purple-400 font-display font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
+                                After the Class change, the skills of the new Class will be <strong>Auto comprehended</strong>, and the skills before the Class change will not be inherited;
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white dark:bg-[#141a29] border border-slate-200 dark:border-slate-800 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-xl bg-purple-500/15 text-purple-400 font-display font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
+                                After the Class change, the professional skills will be converted into the same Lv of the new Class skills;
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-amber-500/5 border border-amber-500/25 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-xl bg-amber-500/20 text-amber-400 font-display font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">6</span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
+                                The <strong>Inscr palace Stats</strong> and the <strong>star Stats of Nuwa Holy Gear</strong> will <strong>not</strong> be converted;
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-red-500/5 border border-red-500/25 flex items-start gap-3.5">
+                            <span class="w-7 h-7 rounded-xl bg-red-500/20 text-red-400 font-display font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">7</span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
+                                After the Class change, the <strong>soul ring exchange activity</strong> will be opened, and you can exchange the <strong>1k-year and lower professional soul rings for free</strong>, limited to <strong>3 days</strong>; the CD interval between each Class change is <strong>3 days</strong>, please operate with caution;
+                            </p>
+                        </div>
+                    </div>
+                `
+            },
+            {
                 id: 'faq-troubleshooting',
                 category: 'Getting Started',
                 title: 'FAQ & Verified Game Facts',
@@ -1007,7 +1111,7 @@
         // Load Data from localStorage or Defaults
         function loadWikiData() {
             try {
-                const stored = localStorage.getItem('mc_wiki_pages_verified_v18');
+                const stored = localStorage.getItem('mc_wiki_pages_verified_v19');
                 if (stored) {
                     wikiPages = JSON.parse(stored);
                 } else {
@@ -1025,6 +1129,11 @@
                 redeemedCodes = {};
                 userScreenshots = [];
             }
+            updatePageCountBadge();
+        }
+
+        function saveWikiToStorage() {
+            localStorage.setItem('mc_wiki_pages_verified_v19', JSON.stringify(wikiPages));
             updatePageCountBadge();
         }
 
@@ -1248,6 +1357,38 @@
                 `;
             }
 
+            if (widgetType === 'class-change-checklist') {
+                return `
+                    <div class="mt-8 p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <div>
+                                <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Pre-Class Change Readiness Checklist</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Check off each requirement before clicking <strong>Next Step</strong> at the Universal Merchant (3-day CD applies after switching):</p>
+                            </div>
+                            <span id="cc-ready-badge" class="text-xs font-extrabold px-3 py-1 rounded-full bg-amber-500/15 text-amber-400">0 / 4 Ready</span>
+                        </div>
+                        <div class="space-y-2 text-xs sm:text-sm">
+                            <label class="flex items-start gap-2.5 p-3 rounded-xl bg-white dark:bg-[#141a29] border border-slate-200 dark:border-slate-800 cursor-pointer">
+                                <input type="checkbox" class="cc-check mt-1 accent-purple-600">
+                                <span class="text-slate-700 dark:text-slate-200"><strong>Day 7+ Unlocked & CD Clear:</strong> Class Change is unlocked on Day 7 with no active 3-day cooldown.</span>
+                            </label>
+                            <label class="flex items-start gap-2.5 p-3 rounded-xl bg-white dark:bg-[#141a29] border border-slate-200 dark:border-slate-800 cursor-pointer">
+                                <input type="checkbox" class="cc-check mt-1 accent-purple-600">
+                                <span class="text-slate-700 dark:text-slate-200"><strong>Lv60+ Basic Equip Unequipped:</strong> Removed any equipped Lv60+ basic gear (gear below Lv60, Divine Seal Gear, wings & four-elephant secondary gear auto-convert).</span>
+                            </label>
+                            <label class="flex items-start gap-2.5 p-3 rounded-xl bg-white dark:bg-[#141a29] border border-slate-200 dark:border-slate-800 cursor-pointer">
+                                <input type="checkbox" class="cc-check mt-1 accent-purple-600">
+                                <span class="text-slate-700 dark:text-slate-200"><strong>Non-Converted Stats Noted:</strong> Checked Inscr palace Stats & star Stats of Nuwa Holy Gear (not converted) and backpack items (not converted).</span>
+                            </label>
+                            <label class="flex items-start gap-2.5 p-3 rounded-xl bg-white dark:bg-[#141a29] border border-slate-200 dark:border-slate-800 cursor-pointer">
+                                <input type="checkbox" class="cc-check mt-1 accent-purple-600">
+                                <span class="text-slate-700 dark:text-slate-200"><strong>3-Day Soul Ring Window Ready:</strong> Ready to claim free 1k-year and lower professional soul ring exchanges within the 3-day window.</span>
+                            </label>
+                        </div>
+                    </div>
+                `;
+            }
+
             if (widgetType === 'rebirth-calc') {
                 return `
                     <div class="mt-8 p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800">
@@ -1277,23 +1418,29 @@
             if (widgetType === 'topup-rebate') {
                 return `
                     <div class="mt-8 p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800">
-                        <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-2">Dual Rebate Calculator ($1 = 1 Point + 10% Gem Rebate)</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Preview your earned points and 10% gem rebate when recharging via the official portal:</p>
-                        <div class="grid grid-cols-3 gap-2.5 text-center text-xs">
-                            <div class="p-3 rounded-xl bg-white dark:bg-[#141a29] border border-slate-200 dark:border-slate-800">
-                                <span class="font-bold text-slate-400">$10 Top-Up</span>
-                                <p class="font-display font-extrabold text-base text-purple-500 mt-1">10 Points</p>
-                                <span class="text-[11px] text-emerald-400 font-semibold">+10% Gem Rebate</span>
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <div>
+                                <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Dual Rebate Calculator ($1 = 1 Point + 10% Gem Rebate)</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Slide to calculate your earned Points and 10% Gem Rebate on platform balance spend:</p>
                             </div>
-                            <div class="p-3 rounded-xl bg-white dark:bg-[#141a29] border border-purple-500/40">
-                                <span class="font-bold text-purple-400">$50 Top-Up</span>
-                                <p class="font-display font-extrabold text-base text-amber-500 mt-1">50 Points</p>
-                                <span class="text-[11px] text-emerald-400 font-semibold">+10% Gem Rebate</span>
+                            <span id="topup-usd-label" class="text-xs font-extrabold px-3 py-1 rounded-full bg-purple-500/15 text-purple-400">$50 Top-Up</span>
+                        </div>
+                        <input id="topup-slider" type="range" min="1" max="500" value="50" class="w-full accent-purple-600 cursor-pointer mb-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-xs">
+                            <div class="p-3.5 rounded-xl bg-white dark:bg-[#141a29] border border-slate-200 dark:border-slate-800">
+                                <span class="text-[10px] uppercase font-bold text-slate-400">Top-Up Amount</span>
+                                <p id="topup-amount-val" class="font-display font-extrabold text-base text-slate-900 dark:text-white mt-1">$50.00</p>
+                                <span class="text-[11px] text-slate-500">Official Platform Balance</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-white dark:bg-[#141a29] border border-slate-200 dark:border-slate-800">
-                                <span class="font-bold text-slate-400">$100 Top-Up</span>
-                                <p class="font-display font-extrabold text-base text-emerald-500 mt-1">100 Points</p>
-                                <span class="text-[11px] text-emerald-400 font-semibold">+10% Gem Rebate</span>
+                            <div class="p-3.5 rounded-xl bg-white dark:bg-[#141a29] border border-amber-500/30">
+                                <span class="text-[10px] uppercase font-bold text-amber-400">Points Earned ($1 = 1 Point)</span>
+                                <p id="topup-points-val" class="font-display font-extrabold text-base text-amber-500 mt-1">50 Points</p>
+                                <span class="text-[11px] text-slate-500">Redeem for Gift Code Bundles</span>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-white dark:bg-[#141a29] border border-purple-500/30">
+                                <span class="text-[10px] uppercase font-bold text-purple-400">10% Gem Rebate</span>
+                                <p id="topup-rebate-val" class="font-display font-extrabold text-base text-purple-400 mt-1">+10% Gems Back</p>
+                                <span class="text-[11px] text-slate-500">On Every In-Game Transaction</span>
                             </div>
                         </div>
                     </div>
@@ -1328,6 +1475,37 @@
 
             if (type === 'class-comparator') {
                 selectClassTab('warrior');
+            }
+
+            if (type === 'class-change-checklist') {
+                const checks = document.querySelectorAll('.cc-check');
+                const badge = document.getElementById('cc-ready-badge');
+                if (!checks.length || !badge) return;
+                const updateChecklist = () => {
+                    const checkedCount = Array.from(checks).filter(c => c.checked).length;
+                    badge.textContent = `${checkedCount} / ${checks.length} Ready`;
+                    if (checkedCount === checks.length) {
+                        badge.className = 'text-xs font-extrabold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400';
+                    } else {
+                        badge.className = 'text-xs font-extrabold px-3 py-1 rounded-full bg-amber-500/15 text-amber-400';
+                    }
+                };
+                checks.forEach(c => c.addEventListener('change', updateChecklist));
+                updateChecklist();
+            }
+
+            if (type === 'topup-rebate') {
+                const slider = document.getElementById('topup-slider');
+                if (!slider) return;
+                const updateTopup = () => {
+                    const usd = parseInt(slider.value, 10);
+                    document.getElementById('topup-usd-label').textContent = `$${usd} Top-Up`;
+                    document.getElementById('topup-amount-val').textContent = `$${usd}.00`;
+                    document.getElementById('topup-points-val').textContent = `${usd} ${usd === 1 ? 'Point' : 'Points'}`;
+                    document.getElementById('topup-rebate-val').textContent = `+10% Gem Rebate`;
+                };
+                slider.addEventListener('input', updateTopup);
+                updateTopup();
             }
 
             if (type === 'rebirth-calc') {
@@ -1725,7 +1903,7 @@
                 return;
             }
             openConfirmModal('Reset Wiki to Defaults?', 'All custom edits and saved screenshots will be restored to the official verified encyclopedia.', () => {
-                localStorage.removeItem('mc_wiki_pages_verified_v18');
+                localStorage.removeItem('mc_wiki_pages_verified_v19');
                 localStorage.removeItem('mc_wiki_redeemed_codes_v1');
                 localStorage.removeItem('mc_wiki_screenshots_v1');
                 loadWikiData();
