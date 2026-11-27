@@ -131,7 +131,7 @@
                     <i class="fa-solid fa-bars text-base"></i>
                 </button>
                 <a href="#welcome" onclick="selectArticle('welcome'); return false;" class="flex items-center gap-2.5 group">
-                    <img src="memeclash.jpg" alt="Meme Clash Icon" onerror="this.onerror=null;this.src='https://placehold.co/80x80/7c3aed/ffffff?text=MC';" class="w-10 h-10 rounded-xl object-cover shadow-lg shadow-purple-500/25 border border-purple-400/40 group-hover:scale-105 transition">
+                    <img src="meme2.jpg" alt="Meme Clash Icon" onerror="this.onerror=null;this.src='https://placehold.co/80x80/7c3aed/ffffff?text=MC';" class="w-10 h-10 rounded-xl object-cover shadow-lg shadow-purple-500/25 border border-purple-400/40 group-hover:scale-105 transition">
                     <div>
                         <div class="flex items-center gap-1.5">
                             <span class="font-display font-extrabold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white">MEME CLASH</span>
@@ -213,7 +213,7 @@
         <aside id="wiki-sidebar" class="fixed lg:sticky top-16 left-0 z-30 w-72 shrink-0 h-[calc(100vh-4rem)] bg-white/95 dark:bg-[#111622]/95 lg:bg-transparent border-r border-slate-200/80 dark:border-slate-800/80 overflow-y-auto p-4 transition-transform duration-200 -translate-x-full lg:translate-x-0">
             <div class="flex items-center justify-between mb-3 px-2">
                 <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500">Official Wiki Topics</span>
-                <span id="page-count-badge" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400">12 Pages</span>
+                <span id="page-count-badge" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400">10 Pages</span>
             </div>
 
             <!-- Category Navigation Tree -->
@@ -834,19 +834,53 @@
                 title: 'Official Top-Up & Points Rebate Guide',
                 icon: 'fa-solid fa-gem',
                 updated: 'Nov 2026',
-                summary: 'How the official CloudSwift Core Top-Up & Points Rebate system works, plus F2P vs Light Spender value tips.',
+                summary: 'Top up your platform balance via official channels to enjoy a 10% Gem Rebate and earn points ($1 = 1 Point) to redeem exclusive Gift Code Bundles.',
                 widget: 'topup-rebate',
                 content: `
-                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                        Alongside Google Play in-app purchases, <strong>CloudSwift Core</strong> operates an official top-up and points rebate system that grants bonus rebate points and milestone packs when recharging Diamonds or VIP privileges.
-                    </p>
+                    <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-purple-500/15 via-fuchsia-500/10 to-amber-500/10 border border-purple-500/30 mb-6">
+                        <p class="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed">
+                            Top up your platform balance via official channels to enjoy a <strong>10% Gem Rebate</strong> and earn points to redeem exclusive <strong>Gift Code Bundles</strong>!
+                        </p>
+                    </div>
 
-                    <h2 id="rebate-highlights" class="font-display font-bold text-xl text-slate-900 dark:text-white mt-6 mb-3">Verified Top-Up & Rebate Tips</h2>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                        <li><strong>Free-to-Play Viability:</strong> You do <em>not</em> need to spend money to enjoy Meme Clash—free login gifts and the 6 active gift codes (<code class="text-xs">MEME666</code>–<code class="text-xs">VIP888</code>) provide plenty of starter resources.</li>
-                        <li><strong>First-Recharge & Privilege Value:</strong> For light spenders, First-Recharge bundles and Auto-Recycle / Privilege passes offer the highest long-term quality-of-life boost for AFK farming.</li>
-                        <li><strong>Account Safety Warning:</strong> Only use official Google Play billing inside <code class="text-xs">com.qbqb.gpen</code> or official CloudSwift Core top-up channels—never share your login credentials with third-party sellers.</li>
-                    </ul>
+                    <h2 id="dual-rebate-rules" class="font-display font-bold text-xl text-slate-900 dark:text-white mb-3">Dual Rebate Rules</h2>
+                    <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                        <div class="p-4 rounded-2xl bg-white dark:bg-[#141a29] border border-purple-500/30 flex items-start gap-3.5">
+                            <span class="w-8 h-8 rounded-xl bg-purple-500/15 text-purple-400 font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">1</span>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-purple-400 mb-1">10% Gem Rebate</h3>
+                                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    Spend with platform balance in-game to get a <strong>10% gem rebate</strong> on every transaction.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white dark:bg-[#141a29] border border-amber-500/30 flex items-start gap-3.5">
+                            <span class="w-8 h-8 rounded-xl bg-amber-500/15 text-amber-400 font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">2</span>
+                            <div>
+                                <h3 class="font-display font-bold text-sm sm:text-base text-amber-400 mb-1">$1 = 1 Point</h3>
+                                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    Earn points by topping up your platform balance (<strong>$1 = 1 Point</strong>). Redeem points for special gift code rewards.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 id="official-topup-link" class="font-display font-bold text-xl text-slate-900 dark:text-white mb-3">Official Top-Up Link</h2>
+                    <div class="p-4 sm:p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="min-w-0">
+                            <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-400">Official Website Portal</span>
+                            <p class="font-mono text-xs sm:text-sm text-slate-800 dark:text-slate-200 truncate mt-1">
+                                https://mengchuo.mcsiqi.com/h5sdk/com/r_login.html
+                            </p>
+                        </div>
+                        <a href="https://mengchuo.mcsiqi.com/h5sdk/com/r_login.html" target="_blank" rel="noopener noreferrer"
+                           class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold inline-flex items-center justify-center gap-2 shadow-md shadow-emerald-500/20 transition shrink-0">
+                            <i class="fa-solid fa-gem"></i>
+                            <span>Open Official Top-Up</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
                 `
             },
             {
@@ -973,7 +1007,7 @@
         // Load Data from localStorage or Defaults
         function loadWikiData() {
             try {
-                const stored = localStorage.getItem('mc_wiki_pages_verified_v17');
+                const stored = localStorage.getItem('mc_wiki_pages_verified_v18');
                 if (stored) {
                     wikiPages = JSON.parse(stored);
                 } else {
@@ -995,7 +1029,7 @@
         }
 
         function saveWikiToStorage() {
-            localStorage.setItem('mc_wiki_pages_verified_v17', JSON.stringify(wikiPages));
+            localStorage.setItem('mc_wiki_pages_verified_v18', JSON.stringify(wikiPages));
             updatePageCountBadge();
         }
 
@@ -1243,23 +1277,23 @@
             if (widgetType === 'topup-rebate') {
                 return `
                     <div class="mt-8 p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800">
-                        <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-2">Points Rebate Tier Estimator</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Select a recharge tier to preview bonus rebate points & milestone perks:</p>
+                        <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-2">Dual Rebate Calculator ($1 = 1 Point + 10% Gem Rebate)</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Preview your earned points and 10% gem rebate when recharging via the official portal:</p>
                         <div class="grid grid-cols-3 gap-2.5 text-center text-xs">
                             <div class="p-3 rounded-xl bg-white dark:bg-[#141a29] border border-slate-200 dark:border-slate-800">
-                                <span class="font-bold text-slate-400">Starter Tier</span>
-                                <p class="font-display font-extrabold text-base text-purple-500 mt-1">100 Pts</p>
-                                <span class="text-[11px] text-slate-500">First-Recharge Weapon</span>
+                                <span class="font-bold text-slate-400">$10 Top-Up</span>
+                                <p class="font-display font-extrabold text-base text-purple-500 mt-1">10 Points</p>
+                                <span class="text-[11px] text-emerald-400 font-semibold">+10% Gem Rebate</span>
                             </div>
                             <div class="p-3 rounded-xl bg-white dark:bg-[#141a29] border border-purple-500/40">
-                                <span class="font-bold text-purple-400">Adventurer Tier</span>
-                                <p class="font-display font-extrabold text-base text-amber-500 mt-1">500 Pts</p>
-                                <span class="text-[11px] text-slate-500">Auto-Recycle + Wing Pack</span>
+                                <span class="font-bold text-purple-400">$50 Top-Up</span>
+                                <p class="font-display font-extrabold text-base text-amber-500 mt-1">50 Points</p>
+                                <span class="text-[11px] text-emerald-400 font-semibold">+10% Gem Rebate</span>
                             </div>
                             <div class="p-3 rounded-xl bg-white dark:bg-[#141a29] border border-slate-200 dark:border-slate-800">
-                                <span class="font-bold text-slate-400">Meme Lord Tier</span>
-                                <p class="font-display font-extrabold text-base text-emerald-500 mt-1">2,000 Pts</p>
-                                <span class="text-[11px] text-slate-500">Title + Rebate Chests</span>
+                                <span class="font-bold text-slate-400">$100 Top-Up</span>
+                                <p class="font-display font-extrabold text-base text-emerald-500 mt-1">100 Points</p>
+                                <span class="text-[11px] text-emerald-400 font-semibold">+10% Gem Rebate</span>
                             </div>
                         </div>
                     </div>
@@ -1508,10 +1542,6 @@
             }).join('');
         }
 
-        // Live Synced Facebook Feed (@memeclash.official)
-        const FB_PAGE_URL = 'https://www.facebook.com/memeclash.official/';
-        const FB_CACHE_KEY = 'mc_fb_live_posts_cache_v1';
-
         function stripHtmlToText(html) {
             const tmp = document.createElement('div');
             tmp.innerHTML = html || '';
@@ -1695,7 +1725,7 @@
                 return;
             }
             openConfirmModal('Reset Wiki to Defaults?', 'All custom edits and saved screenshots will be restored to the official verified encyclopedia.', () => {
-                localStorage.removeItem('mc_wiki_pages_verified_v17');
+                localStorage.removeItem('mc_wiki_pages_verified_v18');
                 localStorage.removeItem('mc_wiki_redeemed_codes_v1');
                 localStorage.removeItem('mc_wiki_screenshots_v1');
                 loadWikiData();
