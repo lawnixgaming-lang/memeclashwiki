@@ -581,7 +581,7 @@
                     </div>
 
                     <!-- Quick Navigation Cards -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
                         <button onclick="selectArticle('gift-codes')" class="p-4 rounded-2xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-left transition cursor-pointer">
                             <span class="text-xs font-extrabold text-amber-500 uppercase block mb-1">Active Promo Codes</span>
                             <span class="font-display font-bold text-sm block text-slate-900 dark:text-white">7 Verified Gift Codes →</span>
@@ -597,6 +597,46 @@
                             <span class="font-display font-bold text-sm block text-slate-900 dark:text-white">Zones & World Bosses →</span>
                             <span class="text-xs text-slate-500">Troll Forest, Cave of Vibes, PvP Risk</span>
                         </button>
+                    </div>
+
+                    <!-- Live Official Facebook Page Feed (@memeclash.official) -->
+                    <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-3">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-9 h-9 rounded-xl bg-[#1877F2]/15 text-[#1877F2] border border-[#1877F2]/30 flex items-center justify-center text-lg shrink-0">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <h3 class="font-display font-bold text-base sm:text-lg text-slate-900 dark:text-white">Live Official Facebook Posts</h3>
+                                        <span class="inline-flex items-center gap-1 text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#1877F2]/15 text-[#1877F2]">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-[#1877F2] animate-ping"></span> LIVE FEED
+                                        </span>
+                                    </div>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">All latest posts, events & announcements from <strong>@memeclash.official</strong></p>
+                                </div>
+                            </div>
+                            <a href="https://www.facebook.com/memeclash.official/" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-[#1877F2] hover:bg-[#166fe5] text-white text-xs font-bold inline-flex items-center gap-1.5 shadow-sm transition shrink-0">
+                                <i class="fa-brands fa-facebook"></i>
+                                <span>Open Facebook Page</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+
+                        <div id="fb-feed-wrapper-overview" class="w-full flex justify-center rounded-xl overflow-hidden bg-white border border-slate-200 dark:border-slate-800 min-h-[520px]">
+                            <iframe
+                                id="fb-page-iframe-overview"
+                                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmemeclash.official%2F&tabs=timeline&width=500&height=650&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+                                width="500"
+                                height="650"
+                                style="border:none;overflow:hidden;max-width:100%;"
+                                scrolling="no"
+                                frameborder="0"
+                                allowfullscreen="true"
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                title="Meme Clash Official Facebook Live Feed">
+                            </iframe>
+                        </div>
                     </div>
                 `
             },
@@ -1007,7 +1047,7 @@
 
         function loadWikiData() {
             try {
-                const stored = localStorage.getItem('mc_wiki_pages_verified_v8');
+                const stored = localStorage.getItem('mc_wiki_pages_verified_v9');
                 if (stored) {
                     wikiPages = JSON.parse(stored);
                 } else {
@@ -1029,7 +1069,7 @@
         }
 
         function saveWikiToStorage() {
-            localStorage.setItem('mc_wiki_pages_verified_v8', JSON.stringify(wikiPages));
+            localStorage.setItem('mc_wiki_pages_verified_v9', JSON.stringify(wikiPages));
             updatePageCountBadge();
         }
 
@@ -1527,10 +1567,57 @@
 
                 return `
                     <div class="space-y-6">
+                        <!-- Live Official Facebook Page Feed (@memeclash.official) -->
+                        <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 space-y-4">
+                            <div class="flex flex-wrap items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-9 h-9 rounded-xl bg-[#1877F2]/15 text-[#1877F2] border border-[#1877F2]/30 flex items-center justify-center text-lg shrink-0">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <h3 class="font-display font-bold text-base sm:text-lg text-slate-900 dark:text-white">Live Official Facebook Posts</h3>
+                                            <span class="inline-flex items-center gap-1 text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#1877F2]/15 text-[#1877F2]">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#1877F2] animate-ping"></span> LIVE FEED
+                                            </span>
+                                        </div>
+                                        <p class="text-xs text-slate-500 dark:text-slate-400">Scroll through all official posts directly from <strong>facebook.com/memeclash.official</strong></p>
+                                    </div>
+                                </div>
+                                <a href="https://www.facebook.com/memeclash.official/" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-[#1877F2] hover:bg-[#166fe5] text-white text-xs font-bold inline-flex items-center gap-1.5 shadow-sm transition shrink-0">
+                                    <i class="fa-brands fa-facebook"></i>
+                                    <span>Follow on Facebook</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+
+                            <div id="fb-feed-wrapper-community" class="w-full flex justify-center rounded-xl overflow-hidden bg-white border border-slate-200 dark:border-slate-800 min-h-[520px]">
+                                <iframe
+                                    id="fb-page-iframe-community"
+                                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmemeclash.official%2F&tabs=timeline&width=500&height=680&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+                                    width="500"
+                                    height="680"
+                                    style="border:none;overflow:hidden;max-width:100%;"
+                                    scrolling="no"
+                                    frameborder="0"
+                                    allowfullscreen="true"
+                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                    title="Meme Clash Official Facebook Live Feed">
+                                </iframe>
+                            </div>
+                        </div>
+
                         <!-- Official Store & Gameplay Links -->
                         <div>
                             <h3 class="font-display font-bold text-xl mb-3">Official Store Listings & Gameplay Footage</h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs sm:text-sm">
+                                <a href="https://www.facebook.com/memeclash.official/" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 hover:border-[#1877F2] transition flex items-center justify-between">
+                                    <div>
+                                        <span class="font-display font-bold text-[#1877F2] block"><i class="fa-brands fa-facebook mr-1.5"></i> Official Facebook</span>
+                                        <span class="text-xs text-slate-500">@memeclash.official • Live Posts</span>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-slate-400"></i>
+                                </a>
                                 <a href="https://play.google.com/store/apps/details?id=com.qbqb.gpen&hl=en" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#0b0e14] border border-slate-200 dark:border-slate-800 hover:border-emerald-500 transition flex items-center justify-between">
                                     <div>
                                         <span class="font-display font-bold text-emerald-500 block"><i class="fa-brands fa-google-play mr-1.5"></i> Google Play Store (Android)</span>
@@ -1585,6 +1672,10 @@
         }
 
         function initWidgetEvents(type) {
+            if (type === 'overview' || type === 'community-hub') {
+                resizeFacebookFeed(type === 'overview' ? 'overview' : 'community');
+            }
+
             if (type === 'topup-rebate') {
                 const usdInput = document.getElementById('topup-usd-input');
                 const gemsInput = document.getElementById('topup-gems-input');
@@ -1624,14 +1715,27 @@
                         resetEl.textContent = 'Character Lv. Resets on Rebirth (Tip 4)';
                         resetEl.className = 'font-display font-extrabold text-sm sm:text-base text-rose-400';
                     } else {
-                        resetEl.textContent = 'No Rb 13+ Level Reset Yet';
-                        resetEl.className = 'font-display font-extrabold text-sm sm:text-base text-cyan-400';
+                        resetEl.textContent = 'No Level Reset Before Rb 13 (Tip 4)';
+                        resetEl.className = 'font-display font-extrabold text-sm sm:text-base text-slate-700 dark:text-slate-200';
                     }
 
-                    perkEl.textContent = `Tier ${rb} Maps, Boss Loot & Rank Priority`;
+                    perkEl.textContent = 'Higher Maps, Loot & Rank Priority';
                 };
                 slider.addEventListener('input', update);
                 update();
+            }
+        }
+
+        function resizeFacebookFeed(slot) {
+            const wrapper = document.getElementById(`fb-feed-wrapper-${slot}`);
+            const iframe = document.getElementById(`fb-page-iframe-${slot}`);
+            if (!wrapper || !iframe) return;
+            const availableWidth = Math.max(280, Math.min(500, Math.floor(wrapper.clientWidth)));
+            const targetHeight = slot === 'community' ? 680 : 650;
+            const newSrc = `https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmemeclash.official%2F&tabs=timeline&width=${availableWidth}&height=${targetHeight}&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true`;
+            if (iframe.getAttribute('width') !== String(availableWidth)) {
+                iframe.setAttribute('width', String(availableWidth));
+                iframe.src = newSrc;
             }
         }
 
@@ -1753,6 +1857,8 @@
 
             window.addEventListener('resize', () => {
                 applySidebarState();
+                if (activeArticleId === 'welcome') resizeFacebookFeed('overview');
+                if (activeArticleId === 'guilds-community') resizeFacebookFeed('community');
             });
         }
 
@@ -2046,7 +2152,7 @@
                 return;
             }
             openConfirmModal('Reset Wiki to Defaults?', 'All custom edits and saved screenshots will be restored to the official verified encyclopedia.', () => {
-                localStorage.removeItem('mc_wiki_pages_verified_v8');
+                localStorage.removeItem('mc_wiki_pages_verified_v9');
                 localStorage.removeItem('mc_wiki_redeemed_codes_v1');
                 localStorage.removeItem('mc_wiki_screenshots_v1');
                 loadWikiData();
