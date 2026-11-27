@@ -101,12 +101,19 @@
         .btn-brrr:active {
             transform: scale(0.95);
         }
+
+        /* Crisp 90% scale on desktop/tablet so layout matches 90% browser zoom */
+        @media (min-width: 768px) {
+            html {
+                font-size: 14.4px;
+            }
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-[#0b0e14] dark:text-slate-100 font-sans antialiased wiki-bg-grid min-h-screen flex flex-col selection:bg-purple-500 selection:text-white">
+    <body class="bg-slate-50 text-slate-800 dark:bg-[#0b0e14] dark:text-slate-100 font-sans antialiased wiki-bg-grid min-h-screen flex flex-col overflow-x-hidden selection:bg-purple-500 selection:text-white">
 
     <!-- Top Live Meme Ticker -->
-    <div class="bg-gradient-to-r from-purple-700 via-fuchsia-600 to-amber-500 text-white text-xs font-semibold py-1.5 overflow-hidden border-b border-white/10 select-none">
+    <div class="bg-gradient-to-r from-purple-700 via-fuchsia-600 to-amber-500 text-white text-[11px] font-semibold py-1 overflow-hidden border-b border-white/10 select-none">
         <div class="animate-ticker">
             <span class="mx-6">🔥 <strong>ACTIVE CODES:</strong> <code class="bg-black/25 px-1.5 py-0.5 rounded">MEME666</code> • <code class="bg-black/25 px-1.5 py-0.5 rounded">MEME777</code> • <code class="bg-black/25 px-1.5 py-0.5 rounded">MEME888</code> • <code class="bg-black/25 px-1.5 py-0.5 rounded">VIP666</code> • <code class="bg-black/25 px-1.5 py-0.5 rounded">VIP777</code> • <code class="bg-black/25 px-1.5 py-0.5 rounded">VIP888</code></span>
             <span class="mx-6">💀 <strong>PSA:</strong> Dying to a player in PvP Zones drops your high-power loot—don't get trolled!</span>
@@ -124,56 +131,56 @@
 
     <!-- Top Navigation Header -->
     <header class="sticky top-0 z-40 backdrop-blur-xl bg-white/85 dark:bg-[#111622]/90 border-b border-slate-200/80 dark:border-slate-800/80">
-        <div class="max-w-[1440px] mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2 sm:gap-4">
+        <div class="max-w-7xl mx-auto px-3 sm:px-5 h-14 flex items-center justify-between gap-2 sm:gap-3">
             <!-- Left: Mobile Sidebar Toggle & Official Logo -->
-            <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
-                <button id="mobile-menu-btn" onclick="toggleMobileSidebar()" aria-label="Toggle Menu" class="lg:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-purple-100 dark:hover:bg-purple-900/40 transition">
-                    <i class="fa-solid fa-bars text-base"></i>
+            <div class="flex items-center gap-2 shrink-0">
+                <button id="mobile-menu-btn" onclick="toggleMobileSidebar()" aria-label="Toggle Menu" class="lg:hidden p-2 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-purple-100 dark:hover:bg-purple-900/40 transition">
+                    <i class="fa-solid fa-bars text-sm"></i>
                 </button>
-                <a href="#welcome" onclick="selectArticle('welcome'); return false;" class="flex items-center gap-2.5 group">
-                    <img src="meme2.jpg" alt="Meme Clash Icon" onerror="this.onerror=null;this.src='https://placehold.co/80x80/7c3aed/ffffff?text=MC';" class="w-10 h-10 rounded-xl object-cover shadow-lg shadow-purple-500/25 border border-purple-400/40 group-hover:scale-105 transition">
+                <a href="#welcome" onclick="selectArticle('welcome'); return false;" class="flex items-center gap-2 group">
+                    <img src="meme2.jpg" alt="Meme Clash Icon" onerror="this.onerror=null;this.src='https://placehold.co/80x80/7c3aed/ffffff?text=MC';" class="w-8 h-8 rounded-lg object-cover shadow-md shadow-purple-500/20 border border-purple-400/40 group-hover:scale-105 transition">
                     <div>
                         <div class="flex items-center gap-1.5">
-                            <span class="font-display font-extrabold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white">MEME CLASH</span>
-                            <span class="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-500/15 text-purple-600 dark:text-purple-400 border border-purple-500/20">LET'S HAVE FUN • v1.0.4</span>
+                            <span class="font-display font-extrabold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white">MEME CLASH</span>
+                            <span class="hidden md:inline-block text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md bg-purple-500/15 text-purple-600 dark:text-purple-400 border border-purple-500/20">v1.0.4</span>
                         </div>
-                        <p class="text-[11px] text-slate-500 dark:text-slate-400 hidden md:block">Official Encyclopedia • CloudSwift Core (com.qbqb.gpen)</p>
+                        <p class="text-[10px] text-slate-500 dark:text-slate-400 hidden xl:block">CloudSwift Core • com.qbqb.gpen</p>
                     </div>
                 </a>
             </div>
 
             <!-- Center: Instant Wiki Search -->
-            <div class="flex-1 max-w-md mx-1 sm:mx-4 relative">
+            <div class="flex-1 max-w-sm mx-1 sm:mx-2 relative">
                 <div class="relative flex items-center">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 text-slate-400 text-xs sm:text-sm pointer-events-none"></i>
-                    <input id="wiki-search-input" type="text" placeholder="Search Warrior, Mage, Taoist, codes, zones..." autocomplete="off"
-                        class="w-full pl-9 pr-14 py-2 text-xs sm:text-sm rounded-xl bg-slate-100/90 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 focus:outline-none focus:ring-2 focus:ring-purple-500/60 focus:border-purple-500 text-slate-900 dark:text-slate-100 placeholder-slate-400 transition">
-                    <kbd class="hidden sm:inline-flex items-center px-1.5 py-0.5 text-[10px] font-semibold text-slate-400 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-md absolute right-2.5">/</kbd>
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 text-slate-400 text-xs pointer-events-none"></i>
+                    <input id="wiki-search-input" type="text" placeholder="Search wiki..." autocomplete="off"
+                        class="w-full pl-8 pr-10 py-1.5 text-xs rounded-lg bg-slate-100/90 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 focus:outline-none focus:ring-2 focus:ring-purple-500/60 focus:border-purple-500 text-slate-900 dark:text-slate-100 placeholder-slate-400 transition">
+                    <kbd class="hidden sm:inline-flex items-center px-1.5 py-0.5 text-[10px] font-semibold text-slate-400 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded absolute right-2">/</kbd>
                 </div>
                 <!-- Instant Search Dropdown -->
-                <div id="search-results-dropdown" class="hidden absolute left-0 right-0 mt-2 bg-white dark:bg-[#161c2c] rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden z-50 max-h-96 overflow-y-auto">
+                <div id="search-results-dropdown" class="hidden absolute left-0 right-0 mt-1.5 bg-white dark:bg-[#161c2c] rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden z-50 max-h-80 overflow-y-auto">
                 </div>
             </div>
 
             <!-- Right: Staff Mode Lock & Theme Toggle -->
-            <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+            <div class="flex items-center gap-1.5 shrink-0">
                 <button id="staff-mode-btn" onclick="handleStaffButtonClick()" title="Official Wiki Staff Edit Mode"
-                    class="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold border transition bg-slate-100 dark:bg-slate-800/90 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-purple-500/50">
-                    <i id="staff-lock-icon" class="fa-solid fa-lock text-slate-400"></i>
-                    <span class="hidden md:inline">Staff Mode:</span>
+                    class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] font-semibold border transition bg-slate-100 dark:bg-slate-800/90 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-purple-500/50">
+                    <i id="staff-lock-icon" class="fa-solid fa-lock text-slate-400 text-xs"></i>
+                    <span class="hidden sm:inline">Staff:</span>
                     <span id="staff-status-text" class="font-bold text-slate-500 dark:text-slate-400">LOCKED</span>
                 </button>
 
                 <button id="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle Dark/Light Theme"
-                    class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-amber-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-                    <i id="theme-icon" class="fa-solid fa-sun text-sm"></i>
+                    class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-amber-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+                    <i id="theme-icon" class="fa-solid fa-sun text-xs"></i>
                 </button>
             </div>
         </div>
     </header>
 
     <!-- Staff Editing Toolbar (Hidden unless Staff PIN unlocked) -->
-    <div id="staff-toolbar" class="hidden bg-purple-950/95 border-b border-purple-500/40 text-purple-100 px-4 py-2.5 sticky top-16 z-30 backdrop-blur-md">
+    <div id="staff-toolbar" class="hidden bg-purple-950/95 border-b border-purple-500/40 text-purple-100 px-3 sm:px-5 py-2 sticky top-14 z-30 backdrop-blur-md">
         <div class="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-2 text-xs">
             <div class="flex items-center gap-2">
                 <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold">
@@ -204,67 +211,64 @@
     </div>
 
     <!-- Main Layout Container -->
-    <div class="max-w-[1440px] w-full mx-auto flex-1 flex relative">
+    <div class="max-w-7xl w-full mx-auto flex-1 flex relative">
 
         <!-- Mobile Backdrop -->
         <div id="mobile-sidebar-backdrop" onclick="toggleMobileSidebar()" class="hidden fixed inset-0 bg-black/60 backdrop-blur-xs z-30 lg:hidden"></div>
 
         <!-- Left Navigation Sidebar -->
-        <aside id="wiki-sidebar" class="fixed lg:sticky top-16 left-0 z-30 w-72 shrink-0 h-[calc(100vh-4rem)] bg-white/95 dark:bg-[#111622]/95 lg:bg-transparent border-r border-slate-200/80 dark:border-slate-800/80 overflow-y-auto p-4 transition-transform duration-200 -translate-x-full lg:translate-x-0">
-            <div class="flex items-center justify-between mb-3 px-2">
-                <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500">Official Wiki Topics</span>
-                <span id="page-count-badge" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400">12 Pages</span>
+        <aside id="wiki-sidebar" class="fixed lg:sticky top-14 left-0 z-30 w-64 shrink-0 h-[calc(100vh-3.5rem)] bg-white/95 dark:bg-[#111622]/95 lg:bg-transparent border-r border-slate-200/80 dark:border-slate-800/80 overflow-y-auto p-3 transition-transform duration-200 -translate-x-full lg:translate-x-0">
+            <div class="flex items-center justify-between mb-2.5 px-2">
+                <span class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500">Topics</span>
+                <span id="page-count-badge" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400">11 Pages</span>
             </div>
 
             <!-- Category Navigation Tree -->
-            <nav id="sidebar-nav-tree" class="space-y-4">
+            <nav id="sidebar-nav-tree" class="space-y-3">
                 <!-- Populated by JavaScript -->
             </nav>
 
             <!-- Verified Game Info Card in Sidebar -->
-            <div class="mt-6 p-3.5 rounded-2xl bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-amber-500/10 border border-purple-500/20">
-                <div class="flex items-center gap-2 mb-1.5">
+            <div class="mt-4 p-3 rounded-xl bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-amber-500/10 border border-purple-500/20">
+                <div class="flex items-center gap-1.5 mb-1">
                     <i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i>
-                    <span class="text-xs font-bold text-slate-800 dark:text-slate-100">Official Build Info</span>
+                    <span class="text-xs font-bold text-slate-800 dark:text-slate-100">Build Info</span>
                 </div>
-                <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">
-                    <strong>Package:</strong> <code class="text-[10px]">com.qbqb.gpen</code><br>
-                    <strong>Version:</strong> v1.0.4 (Sep 3, 2026)<br>
-                    <strong>Developer:</strong> CloudSwift Core<br>
-                    <strong>Rating:</strong> ~4.6 ★ (93,000+ Installs)
+                <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">
+                    <strong>ID:</strong> <code class="text-[10px]">com.qbqb.gpen</code><br>
+                    <strong>Ver:</strong> v1.0.4 • 93K+ Installs
                 </p>
                 <a href="https://play.google.com/store/apps/details?id=com.qbqb.gpen" target="_blank" rel="noopener noreferrer"
-                   class="mt-2.5 w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition shadow-sm">
-                    <i class="fa-brands fa-google-play text-[11px]"></i>
-                    <span>Google Play Store</span>
+                   class="mt-2 w-full inline-flex items-center justify-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-[11px] font-bold transition">
+                    <i class="fa-brands fa-google-play text-[10px]"></i>
+                    <span>Google Play</span>
                 </a>
             </div>
         </aside>
 
         <!-- Center Article Workspace -->
-        <main class="flex-1 min-w-0 p-4 sm:p-6 lg:p-8">
+        <main class="flex-1 min-w-0 p-3 sm:p-5 lg:p-6">
             <div id="article-container" class="max-w-4xl mx-auto animate-article">
                 <!-- Rendered dynamically -->
             </div>
         </main>
 
         <!-- Right Table of Contents (Desktop XL) -->
-        <aside class="hidden xl:block w-64 shrink-0 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto p-6 border-l border-slate-200/60 dark:border-slate-800/60">
-            <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">On This Page</div>
-            <ul id="toc-list" class="space-y-2 text-xs border-l-2 border-slate-200 dark:border-slate-800 pl-3">
+        <aside class="hidden xl:block w-52 shrink-0 sticky top-14 h-[calc(100vh-3.5rem)] overflow-y-auto p-4 border-l border-slate-200/60 dark:border-slate-800/60">
+            <div class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2.5">On This Page</div>
+            <ul id="toc-list" class="space-y-1.5 text-[11px] border-l-2 border-slate-200 dark:border-slate-800 pl-2.5">
                 <!-- Populated dynamically -->
             </ul>
 
             <!-- Quick Interactive Widget: Live Meme Power Clicker -->
-            <div class="mt-8 p-4 rounded-2xl bg-white dark:bg-[#141a29] border border-slate-200/80 dark:border-slate-800 shadow-sm">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-bold text-slate-700 dark:text-slate-200">⚡ Tap = Skills Go BRRR</span>
-                    <span id="brrr-level-badge" class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-500">Lv. 1</span>
+            <div class="mt-6 p-3 rounded-xl bg-white dark:bg-[#141a29] border border-slate-200/80 dark:border-slate-800 shadow-xs">
+                <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200">⚡ Skills BRRR</span>
+                    <span id="brrr-level-badge" class="text-[10px] font-extrabold px-1.5 py-0.5 rounded-full bg-amber-500/15 text-amber-500">Lv. 1</span>
                 </div>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 mb-3">Test the 98% auto-battle dopamine loop right in the wiki!</p>
-                <button onclick="triggerMemeBrrr()" class="btn-brrr w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-purple-600 via-fuchsia-600 to-amber-500 hover:opacity-95 text-white font-display font-bold text-xs shadow-md shadow-purple-500/20 transition flex items-center justify-center gap-2 cursor-pointer">
+                <button onclick="triggerMemeBrrr()" class="btn-brrr w-full py-2 px-2.5 rounded-lg bg-gradient-to-r from-purple-600 via-fuchsia-600 to-amber-500 hover:opacity-95 text-white font-display font-bold text-[11px] shadow-sm transition flex items-center justify-center gap-1.5 cursor-pointer">
                     <i class="fa-solid fa-bolt"></i>
-                    <span>TAP TO CLASH (<span id="brrr-count">0</span>)</span>
+                    <span>TAP (<span id="brrr-count">0</span>)</span>
                 </button>
             </div>
         </aside>
@@ -1111,7 +1115,7 @@
         // Load Data from localStorage or Defaults
         function loadWikiData() {
             try {
-                const stored = localStorage.getItem('mc_wiki_pages_verified_v19');
+                const stored = localStorage.getItem('mc_wiki_pages_verified_v20');
                 if (stored) {
                     wikiPages = JSON.parse(stored);
                 } else {
@@ -1129,6 +1133,11 @@
                 redeemedCodes = {};
                 userScreenshots = [];
             }
+            updatePageCountBadge();
+        }
+
+        function saveWikiToStorage() {
+            localStorage.setItem('mc_wiki_pages_verified_v20', JSON.stringify(wikiPages));
             updatePageCountBadge();
         }
 
@@ -1228,43 +1237,43 @@
 
             container.innerHTML = `
                 <!-- Article Hero Header -->
-                <div class="mb-6 p-5 sm:p-7 rounded-3xl bg-white dark:bg-[#141a29] border border-slate-200/80 dark:border-slate-800 shadow-sm relative overflow-hidden">
-                    <div class="absolute -right-10 -top-10 w-44 h-44 bg-purple-500/10 rounded-full blur-2xl pointer-events-none"></div>
-                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <div class="mb-4 p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#141a29] border border-slate-200/80 dark:border-slate-800 shadow-xs relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 w-36 h-36 bg-purple-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
                         <div class="flex items-center gap-2">
-                            <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-purple-500/15 text-purple-600 dark:text-purple-400">
+                            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-500/15 text-purple-600 dark:text-purple-400">
                                 ${page.category}
                             </span>
-                            <span class="text-xs text-slate-400">Updated ${page.updated}</span>
+                            <span class="text-[11px] text-slate-400">Updated ${page.updated}</span>
                         </div>
                         ${isStaffMode ? `
-                            <button onclick="toggleInlineEdit()" class="px-3 py-1 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold flex items-center gap-1.5">
+                            <button onclick="toggleInlineEdit()" class="px-2.5 py-1 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-[11px] font-bold flex items-center gap-1">
                                 <i class="fa-solid fa-pen"></i> Edit Article
                             </button>
                         ` : `
-                            <button onclick="handleStaffButtonClick()" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-purple-400 text-[11px] font-semibold flex items-center gap-1.5 transition" title="Locked for public readers; Staff PIN required to edit">
+                            <button onclick="handleStaffButtonClick()" class="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-purple-400 text-[11px] font-semibold flex items-center gap-1 transition" title="Locked for public readers; Staff PIN required to edit">
                                 <i class="fa-solid fa-lock text-[10px]"></i> Staff Edit
                             </button>
                         `}
                     </div>
 
                     ${isOverview ? `
-                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3.5 sm:gap-5">
                             <img src="memeclash.jpg" alt="Meme Clash: Let’s Have Fun Official Logo"
                                 onerror="this.onerror=null;this.src='https://placehold.co/240x240/7c3aed/ffffff?text=MEME+CLASH';"
-                                class="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-3xl object-cover shrink-0 shadow-2xl shadow-purple-500/30 border-2 border-purple-400/50 bg-slate-900">
+                                class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover shrink-0 shadow-lg shadow-purple-500/20 border border-purple-400/40 bg-slate-900">
                             <div class="min-w-0 flex-1">
-                                <h1 id="article-title-el" class="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white tracking-tight mb-2">
+                                <h1 id="article-title-el" class="font-display font-extrabold text-xl sm:text-2xl lg:text-3xl text-slate-900 dark:text-white tracking-tight mb-1.5">
                                     ${page.title}
                                 </h1>
-                                <p id="article-summary-el" class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                                <p id="article-summary-el" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                                     ${page.summary}
                                 </p>
                             </div>
                         </div>
                     ` : `
-                        <h1 id="article-title-el" class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 dark:text-white tracking-tight mb-2 flex items-center gap-3">
-                            <span class="w-10 h-10 rounded-2xl bg-purple-600/15 text-purple-500 flex items-center justify-center text-lg shrink-0">
+                        <h1 id="article-title-el" class="font-display font-extrabold text-xl sm:text-2xl text-slate-900 dark:text-white tracking-tight mb-1.5 flex items-center gap-2.5">
+                            <span class="w-8 h-8 rounded-xl bg-purple-600/15 text-purple-500 flex items-center justify-center text-sm shrink-0">
                                 <i class="${page.icon}"></i>
                             </span>
                             <span>${page.title}</span>
@@ -1276,7 +1285,7 @@
                 </div>
 
                 <!-- Main Article Body -->
-                <div id="article-body-el" class="p-5 sm:p-7 rounded-3xl bg-white dark:bg-[#141a29] border border-slate-200/80 dark:border-slate-800 shadow-sm">
+                <div id="article-body-el" class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#141a29] border border-slate-200/80 dark:border-slate-800 shadow-xs">
                     ${page.content}
                     ${renderWidgetHTML(page.widget)}
                 </div>
@@ -1903,7 +1912,7 @@
                 return;
             }
             openConfirmModal('Reset Wiki to Defaults?', 'All custom edits and saved screenshots will be restored to the official verified encyclopedia.', () => {
-                localStorage.removeItem('mc_wiki_pages_verified_v19');
+                localStorage.removeItem('mc_wiki_pages_verified_v20');
                 localStorage.removeItem('mc_wiki_redeemed_codes_v1');
                 localStorage.removeItem('mc_wiki_screenshots_v1');
                 loadWikiData();
